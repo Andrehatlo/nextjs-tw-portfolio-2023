@@ -6,17 +6,34 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@tailwindcss/typography": "^0.5.8",
     "axios": "^1.2.2",
+    "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
+    "gray-matter": "^4.0.3",
+    "heroicons": "^2.0.13",
+    "markdown-it": "^13.0.1",
     "next": "latest",
+    "next-themes": "^0.2.1",
+    "probe-image-size": "^7.2.3",
     "react": "^18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1",
+    "sass": "^1.57.1",
+    "tailwindcss-dark-mode": "^1.1.7"
   },
   "devDependencies": {
+    "@types/markdown-it": "^12.2.3",
     "@types/node": "18.11.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.12",
+    "eslint": "^8.31.0",
     "postcss": "^8.4.18",
     "tailwindcss": "^3.2.4",
     "typescript": "4.9.4"
