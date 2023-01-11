@@ -9,8 +9,14 @@ Fully responsive portfolio site that includes:
 - Developer Introduction page with Social Links
 - Markdown Blog Page (Jekyll type).
 - Weather Condition Search and Geolocation Api Integration.
-TODO [] - Skill page (skill -> icon)
-TODO [] - Project page (vercel import from user api?)
+
+TODO:
+
+* Skill page (skill -> icon (fetch icons from constants.js))
+* Move CRUD to pages/api and sync with weather page
+* Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+
 
 ## How to use
 
@@ -48,9 +54,9 @@ tags:
         - "2"
 ---
 
-//content in markdown
-```md
+# Content In Markdown Here
 
 
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+
