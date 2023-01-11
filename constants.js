@@ -1,14 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCrown, faRocket, faFireFlameCurved, faFeather, faCloudSun  } from '@fortawesome/free-solid-svg-icons'
+import {faCrown, faFeather, faCloudSun, faEnvelope  } from '@fortawesome/free-solid-svg-icons'
+import { FaLinkedinIn, FaGithub, FaDev } from 'react-icons/fa';
 
 export const ABOUT = {
-  title: 'Hi, I’m André Hatlo',
-  subtitle: 'I work as a Full Stack Developer, I build things for the web.',
-  companyLink: 'https://mo9.no/',
-  company: 'MO9',
-  description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500's, when an unknown printer took a galley of type and scrambled it to make a type specimen book`,
-  subDescription: `Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book`,
-  underTitle: `I'm a rocket 🚀`,
+  title: `Hi`,
+  subtitle: `I'm a highly skilled and experienced full stack developer based in Norway. Currently working for`,
+  companyLink: 'www.mo9.no',
+  company: 'Mo9 Media',
+  description: `With 5 years of experience in the IT industry, Whether you need a new website or application developed from scratch, or you require enhancements or updates to an existing one, I have the expertise and dedication to help bring your ideas to life.`,
+  subDescription: `I am proficient in a wide range of programming languages and technologies, including HTML, CSS, JavaScript, React, Node.js, and many more. I am also highly proficient in both back-end and front-end development, ensuring that I can handle all aspects of your project from start to finish.`,
+  subDescription: `In addition to my technical skills, I am a strong communicator and problem-solver, with the ability to work effectively both independently and as part of a team. I am committed to delivering high-quality work on time and on budget, and I am always eager to learn and stay up-to-date with the latest trends and best practices in the industry.`,
+
+  underTitle: `Need a reliable and skilled developer, please do not hesitate to connect with me. I look forward to the opportunity to work with you and help bring your ideas to life.🚀`,
   socialimg: "/public/profile.jpeg"
 }
 
@@ -49,7 +52,7 @@ export const MENULINKS = [
     },
     {
         name: "Skills.",
-        links: "/Skills",
+        links: "/skills",
         icon: <FontAwesomeIcon icon={faCrown} className="cursor-pointer light:text-black dark:text-white md:hidden" />
     },
 ]  
@@ -63,18 +66,22 @@ export const SOCIAL_LINKS = [
   {
     name: "Mail",
     url: "mailto: andrehatlo@icloud.com",
+    icon: <FontAwesomeIcon icon={faEnvelope} className="cursor-pointer light:text-black dark:text-white"/>,
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/andrehatlo/",
+    icon: <FaLinkedinIn className='cursor-pointer light:text-black dark:text-white'/>,
   },
   {
     name: "Github",
     url: "https://github.com/andrehatlo",
+    icon: <FaGithub className='cursor-pointer light:text-black dark:text-white'/>,
   },
   {
     name: "Dev.to",
     url: "https://dev.to/andrehatlo",
+    icon: <FaDev className='cursor-pointer light:text-black dark:text-white' />,
   }
 ];
 

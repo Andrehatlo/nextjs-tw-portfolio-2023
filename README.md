@@ -1,27 +1,56 @@
-# Next.js + Tailwind CSS Example
+# Next.js + Tailwind Portfolio 
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+A Jekyll clone using NextJS, Typescript and Tailwind.
 
-## Deploy your own
+Typescript, NextJS/13 and Tailwind.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+Fully responsive portfolio site that includes:
+- Light/Dark Mode Themeswitcher.
+- Developer Introduction page with Social Links
+- Markdown Blog Page (Jekyll type).
+- Weather Condition Search and Geolocation Api Integration.
+TODO [] - Skill page (skill -> icon)
+TODO [] - Project page (vercel import from user api?)
 
 ## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+```bash
+git clone repo
+```
+
+Get a API key from OpenWeatherAPI
+
+Rename `.env-example` to `.env`.
+
+Add API key to `WEATHER_API_KEY`.
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
+npm install
 ```
 
 ```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+npm run dev
 ```
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
+Add blog posts `app/posts` folder in this format:
+
+Filename will become the slug, for example filename `2022-07-01-ssg-ssr.md` is slug `/blog/2022-07-01-ssg-ssrz`
+
 ```
+---
+title: "Title"
+metaTitle: "Title"
+metaDesc: "desc"
+socialImage: "img"
+date: "year-month-day"
+tags:
+        - "1"
+        - "2"
+---
+
+//content in markdown
+```md
+
+
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).

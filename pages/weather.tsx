@@ -7,7 +7,10 @@ const WeatherPage = () => {
   const [location, setLocation] = useState('');
   const [place, setPlace] = useState('');
 
+  {/* Weather Data  */}
 
+
+  {/* Returns weather data based on LOCATION = City/Country */}
   const getWeather = async (location: string) => {
     try {
       const response = await axios.get(
@@ -22,6 +25,7 @@ const WeatherPage = () => {
     }
   };
 
+  {/* Returns weather data based on Latitude & Longitude values */}
   const getCurrentLocationWeather = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -35,6 +39,7 @@ const WeatherPage = () => {
             )
             .then((response) => {
               setWeatherData(response.data);
+              setPlace(response.data.name);
               console.log("getCurrentLocationWeather: " + response.data);
             })
             .catch((error) => {
@@ -50,6 +55,7 @@ const WeatherPage = () => {
     }
   };
 
+  {/* Returns location name based on Longitude & Latitude values */}
   const getLocationName = async (lat: number, lon: number) => {
     try {
       const response = await axios.get(

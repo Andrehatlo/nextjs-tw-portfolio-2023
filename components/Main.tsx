@@ -7,7 +7,6 @@ import socialImg from '/public/profile.jpeg';
 
 const Main = () => {
     const about = ABOUT;
-    // const profilePic =  PROFILEIMG;
 
     return (
         <div className="container px-4 mx-auto">
@@ -16,18 +15,31 @@ const Main = () => {
                 <div className="lg:px-4 lg:mt-12 ">
                     <h1 className="text-2xl font-bold light:text-gray-900 lg:text-5xl dark:text-white">
                         {about.title}
+                        <p className="text-2xl italic font-semibold text-center text-slate-900 dark:text-white">
+                            {`${about.title + " "} currently working for `}
+                            <br/>
+                            <span className="relative inline-block before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500">
+                                <span className="relative text-white"> {about.company}.</span>
+                            </span>
+                            {`${" " + about.description}`}
+                        </p>
                     </h1>
-                    <div className="mt-6 light:text-gray-800 dark:text-white">
+                    <p className="text-2xl italic font-semibold text-center text-slate-900 dark:text-white">
+                        <br/> {`${" " + about.subDescription}`}
+                    </p>
+
+                    <p className="text-2xl italic font-semibold text-center text-slate-900 dark:text-white">
+                        <br/> {`${" " + about.underTitle}`}
+                    </p>
+                    {/* <div className="mt-6 light:text-gray-800 dark:text-white">
                         <p className="mb-4">{ about.subtitle } <a
                             href={about.companyLink}
                             className="font-bold transition-colors hover:text-sky-500" target="_blank"
                             rel="noopener">{about.company}</a>.
                         </p>
+
                         <p className="mb-4">
-                            {about.description}
-                        </p>
-                        <p className="mb-4">
-                            {about.subDescription}
+                            
                         </p>
                         <h2 className="font-bold">{about.underTitle}</h2>
                     </div>
@@ -41,7 +53,7 @@ const Main = () => {
                         width={250}
                         height={250}
 
-                    />
+                    /> */}
                     <div className="flex justify-center mt-6 ">
                         <div
                             className="flex space-x-4 font-medium light:text-gray-800 md:flex lg:flex sm:flex sm:block dark:text-white">

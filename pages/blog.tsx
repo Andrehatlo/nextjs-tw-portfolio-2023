@@ -5,7 +5,6 @@ import matter from "gray-matter";
 
 const Blog = (props) => {
   console.log(props)
-
   const [isLoading, setIsLoading] = useState(true);
   const { posts } = props;
 
@@ -22,7 +21,6 @@ const Blog = (props) => {
       <div className="grid gap-2 mt-12 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map(( post, index) => (
           <BlogCard key={index} post={post} />
-        
         ))}
       </div>
     </div>
