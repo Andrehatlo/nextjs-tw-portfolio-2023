@@ -4,10 +4,10 @@ import { ThemeProvider } from "next-themes";
 import MetaContainer from '../components/MetaContainer';
 
 
+// Font Awesome 
 import { config } from '@fortawesome/fontawesome-svg-core'
-
-config.autoAddCss = false
-import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false //
 
 
 
@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <ThemeProvider attribute='class' enableSystem={false}>
         <MetaContainer>
-          <Component {...pageProps} />
+          <Component {...pageProps}/>
         </MetaContainer>
       </ThemeProvider>
     </>
