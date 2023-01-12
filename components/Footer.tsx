@@ -1,7 +1,6 @@
 import React from "react";
 import Link from 'next/link';
 import { SOCIAL_LINKS } from "../constants";
-import Icons from "./Icons";
 
 const Footer = () => {
     const social = SOCIAL_LINKS; 
@@ -19,10 +18,9 @@ const Footer = () => {
                                 target="_blank"
                                 rel="noreferrer"
                                 >
-                                    <div className="flex mx-auto text-xl">
+                                    <div className="flex mx-auto text-xl cursor-pointer light:text-black dark:text-white">
                                         {social.icon}
-                                    </div>
-                                    <Icons icon={social.icon} />
+                                    </div> 
                             </Link>
                         ))}
                     </div>

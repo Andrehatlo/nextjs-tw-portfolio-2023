@@ -4,6 +4,7 @@ import {useRouter} from "next/router";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { METADATA } from '../constants';
+import { motion } from "framer-motion";
 
 export default function MetaContainer({children, ...customMeta}) {
     const router = useRouter();
@@ -38,8 +39,19 @@ export default function MetaContainer({children, ...customMeta}) {
                 )}
             </Head>
             <main className="w-full">
-                <Navbar/>
-                <div>{children}</div>
+                <motion.div
+                    initial={{ x: 300, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: 300, opacity: 0 }}
+                    transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20,
+                    }}
+                >
+                    <Navbar/>
+                    <div>{children}</div>
+                </motion.div>
                 <Footer/>
             </main>
         </div>

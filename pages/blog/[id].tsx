@@ -2,13 +2,27 @@ import React from 'react';
 import fs from 'fs';
 import matter from 'gray-matter';
 import md from 'markdown-it';
+import { motion, useScroll, useSpring } from 'framer-motion'
 
-export default function Blog({ frontmatter, content }) {
+interface BlogProps {
+  frontmatter: {
+    title: string;
+    date: string;
+    socialImage: string;
+  };
+  content: string;
+}
+
+const Blog: React.FC<BlogProps> = ({ frontmatter, content }) => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 400, damping: 90 });
   console.log(frontmatter)
   console.log(content)
   
   return (
+    
       <div className="justify-center align-middle w-100">
+        <motion.path d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0" style={{ scaleX }}/>
         <div className="w-3/4 mx-auto prose dark:prose-invert">
           <img src={`${frontmatter.socialImage}`} className="relative w-3/4 max-w-2xl mx-auto filter grayscale hover:grayscale-0" />
         
@@ -18,6 +32,9 @@ export default function Blog({ frontmatter, content }) {
     </div>
   );
 }
+
+export default Blog;
+
 export async function getStaticPaths() {
   // get all the paths from slugs or file names
   const files = fs.readdirSync('posts');

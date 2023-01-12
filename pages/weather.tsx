@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const WeatherPage = () => {
+const Weather: React.FC = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
   const [location, setLocation] = useState('');
@@ -145,4 +145,4 @@ const WeatherPage = () => {
   );
 }
   
-export default WeatherPage;
+export default Weather;
