@@ -4,11 +4,26 @@ import { MENULINKS } from '../constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX, faBars } from '@fortawesome/free-solid-svg-icons'
 import ThemeSwitch from './ThemeSwitch';
+import Icon from './Icon';
+import { IconType } from 'react-icons/lib';
+
 
 interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = ({}) => {
   const [open, setOpen] = useState(false)
+
+  const renderIcon = (icon: IconType, index: number) => {
+		return(
+			
+			<div 
+				className="m-2 text-4xl text-black dark:text-blue-300" 
+				key={index} 
+			>
+				<Icon icon = {icon} children={""} />
+			</div>
+		);
+	}
   
     return (
       <nav className="sticky top-0 left-0 right-0 z-20 w-full bg-white shadow dark:shadow-slate-400 md:py-1 md:mb-6 dark:bg-black">
@@ -26,6 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
             </div>
             {/* Hamburger icon */}
             <div onClick={() => setOpen(!open)} className="lg:hidden md:hidden">
+   
               {open ? (
                 <FontAwesomeIcon icon={faX} 
                   className="absolute w-10 h-10 cursor-pointer light:text-black right-8 top-8 md:hidden lg:hidden dark:text-white"/>
@@ -43,13 +59,13 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
             >
             {/* END Popout Menu */}  
             {/* Links and Icons */}
-              {MENULINKS.map((link) => (
+              {MENULINKS.map((link, index) => (
                 <li key={link.name} className="text-xl md:ml-8 md:my-0 my-7">
                   <div className="flex items-center justify-between">
                     <Link className="flex items-center space-x-2 light:text-gray-800 hover:text-gray-400 dark:text-white dark:hover:text-blue-600" href={link.links}>
-                      <span className="dark:text-white">
-                        {link.icon}
-                      </span>
+                      {/* <span className="dark:text-white">
+                        {renderIcon(link.icon, index)}
+                      </span> */}
                       <span>
                         <p className="">
                           {link.name}

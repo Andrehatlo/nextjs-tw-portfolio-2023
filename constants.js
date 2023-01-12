@@ -84,28 +84,29 @@ export const MENULINKS = [
         links: "/blog",
         icon: FaPen
     },
+
     {
-        name: "Weather.",
-        links: "/weather",
-        icon: FaCloudSun
-        
-    },
-    {
-        name: "Skills.",
-        links: "/skills",
+        name: "About.",
+        links: "/about",
         icon: FaCrown
     },
-    {
+    // {
 
-        name: "Contact.",
-        links: "/contact",
-        icon: FaFeather
-    },
+    //     name: "Contact.",
+    //     links: "/contact",
+    //     icon: FaFeather
+    // },
     {
       name: "Projects.",
       links: "/projects",
       icon: FaFeather
-    }
+    },
+        // {
+    //     name: "Weather.",
+    //     links: "/weather",
+    //     icon: FaCloudSun
+        
+    // },
 ]  
   
 export const TYPED_STRINGS = [
@@ -148,17 +149,16 @@ export const SKILLS = {
     { name: "Rails", icon: SiRubyonrails },
     { name: "React", icon: SiReact },
     // { name: "Next.js", icon: SiNextDotJs },
-    { name: "Node.js", icon: FaNodeJs },
     { name: "GraphQL", icon: SiGraphql },
     // { name: "Apollo", icon: SiApollo },
     { name: "Spring", icon: SiSpring },
   ],
   databases: [
     { name: "PostgreSQL", icon: SiPostgresql },
-    { name: "MySQL", icon: SiMysql },
-    { name: "MongoDB", icon: SiMongodb  },
     { name: "Redis", icon: SiRedis },
+    { name: "MySQL", icon: SiMysql },
     { name: "SQLite", icon: SiSqlite },
+    { name: "MongoDB", icon: SiMongodb  },
   ],
   stylingFrameworks: [
     { name: "Tailwind CSS", icon: SiTailwindcss },
@@ -175,20 +175,17 @@ export const SKILLS = {
     { name: "Cucumber", icon: SiCucumber},
   ],
   tools: [
-    { name  : "Github", icon: SiGithub},
+    { name: "Github", icon: SiGithub},
+    { name: "Slack", icon: SiSlack },
     { name: "Jira", icon: SiJira },
     { name: "Confluence", icon: SiConfluence },
-    { name: "Slack", icon: SiSlack },
   ],
   other: [
+    { name: "Node.js", icon: FaNodeJs },
     { name: "Heroku", icon: SiHeroku },
     { name: "AWS", icon: SiAmazonaws },
-    { name: "GCP", icon: SiGooglecloud },
-    { name: "Digital Ocean", icon: SiDigitalocean },
-    { name: "Netlify", icon: SiNetlify},
-    { name: "Trello", icon: SiTrello },
     { name: "Adobe Photoshop", icon: SiAdobephotoshop },
-    { name: "Adobe Illustrator", icon: SiAdobeillustrator },
+    { name: "Digital Ocean", icon: SiDigitalocean },
   ],
 };
   
