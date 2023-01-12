@@ -5,14 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX, faBars } from '@fortawesome/free-solid-svg-icons'
 import ThemeSwitch from './ThemeSwitch';
 
+interface NavbarProps {}
 
-
-const Header = () => {
+const Navbar: React.FC<NavbarProps> = ({}) => {
   const [open, setOpen] = useState(false)
-
-  const toggleMenu = () => {
-    setOpen(!open)
-  }
+  
     return (
       <nav className="sticky top-0 left-0 right-0 z-20 w-full bg-white shadow dark:shadow-slate-400 md:py-1 md:mb-6 dark:bg-black">
           <div className="items-center justify-between py-4 md:flex md:px-10 px-7">
@@ -70,4 +67,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navbar;

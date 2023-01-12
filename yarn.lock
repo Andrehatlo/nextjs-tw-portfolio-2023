@@ -169,6 +169,13 @@
   "resolved" "https://registry.npmjs.org/@types/ms/-/ms-0.7.31.tgz"
   "version" "0.7.31"
 
+"@types/next@^9.0.0":
+  "integrity" "sha512-gnBXM8rP1mnCgT1uE2z8SnpFTKRWReJlhbZLZkOLq/CH1ifvTNwjIVtXvsywTy1dwVklf+y/MB0Eh6FOa94yrg=="
+  "resolved" "https://registry.npmjs.org/@types/next/-/next-9.0.0.tgz"
+  "version" "9.0.0"
+  dependencies:
+    "next" "*"
+
 "@types/node@18.11.3":
   "integrity" "sha512-fNjDQzzOsZeKZu5NATgXUPsaFaTxeRgFXoosrHivTl8RGeV733OLawXsGfEk9a8/tySyZUyiZ6E8LcjPFZ2y1A=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-18.11.3.tgz"
@@ -195,7 +202,7 @@
     "@types/scheduler" "*"
     "csstype" "^3.0.2"
 
-"@types/react@18.0.21":
+"@types/react@^18.0.21":
   "integrity" "sha512-7QUCOxvFgnD5Jk8ZKlUAhVcRj7GuJRjnjjiY/IUBWKgOlnvDvTMLD4RTF7NPyVmbRhNrbomZiOepg7M/2Kj1mA=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-18.0.21.tgz"
   "version" "18.0.21"

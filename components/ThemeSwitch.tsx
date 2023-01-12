@@ -1,7 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {useTheme} from 'next-themes';
 
-const ThemeSwitch = () => {
+
+
+interface ThemeSwitchProps {}
+
+const ThemeSwitch: React.FC<ThemeSwitchProps> = () => {
     const [mounted, setMounted] = useState(false);
     const { theme, setTheme, resolvedTheme } = useTheme();
     
