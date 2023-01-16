@@ -61,3 +61,5 @@ const MetaContainer: React.FC<MetaContainerProps> = ({children}) => {
         </div>
     );
 }
+
+export default MetaContainer;

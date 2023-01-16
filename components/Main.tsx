@@ -6,8 +6,11 @@ import socialImg from '/public/profile.jpeg';
 import Icon from "./Icon";
 import { FaTwitter, FaGithub, FaMedium, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
+interface MainProps {
+    children: React.ReactNode;
+}
 
-const Main = () => {
+const Main: React.FC<MainProps> = ({children}) => {
     const intro = INTRO;
 
     return (

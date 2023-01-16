@@ -4,7 +4,11 @@ import { SOCIAL_LINKS } from "../constants";
 import { IconType } from "react-icons";
 import Icon from './Icon'
 
-const Footer = () => {
+interface FooterProps { 
+    children: React.ReactNode;
+}
+
+const Footer: React.FC<FooterProps> = ({children}) => {
     const social = SOCIAL_LINKS; 
 
     const renderIcon = (icon: IconType, name: String, index: number) => {

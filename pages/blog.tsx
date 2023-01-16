@@ -3,7 +3,11 @@ import BlogCard from "../components/BlogCard";
 import fs from 'fs'
 import matter from "gray-matter";
 
-const Blog = (props) => {
+interface BlogProps {
+  posts: any;
+}
+
+const Blog = (props: BlogProps) => {
   console.log(props)
   const [isLoading, setIsLoading] = useState(true);
   const { posts } = props;
