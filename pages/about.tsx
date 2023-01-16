@@ -86,6 +86,7 @@ const About: NextPage = () => {
                 </h2>
 
 
+
                 <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
                     At Work</h1>
                 <h2 className="prose mb-16 text-gray-600 dark:text-[#c2c2c2] dark:prose-dark">
@@ -99,10 +100,6 @@ const About: NextPage = () => {
                     )
                 })}
                 </h2>
-
-               
-
-                
             </div>
         </div>
     </div>       

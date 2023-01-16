@@ -14,7 +14,7 @@ const Skills: React.FC<SkillsProps> = ({}) => {
 	const renderIcon = (icon: IconType, name: String, index: number) => {
 		return(
 			<div 
-				className="m-2 text-xl text-black dark:text-blue-300" 
+				className="m-2 text-black lg:text-4xl md:text-2xl sm:text-lg dark:text-blue-300" 
 				key={index} 
 			>
 				<motion.div
@@ -45,7 +45,7 @@ const Skills: React.FC<SkillsProps> = ({}) => {
     return (
 		<div className="py-6 mt-12 lg:mt-18 sm:pb-36 sm:py-12">
 			<div className="max-w-4xl px-4 mx-auto text-gray-800 dark:text-gray-100">
-			<h1 className="mb-4 text-xl font-bold tracking-tight text-center text-black dark:text-white md:text-3xl">
+			<h1 className="mb-4 text-2xl font-bold tracking-tight text-center text-black dark:text-white md:text-3xl">
             	 My Stack</h1>
 				<div className="flex flex-col items-center justify-center flex-1 w-full space-x-4 text-center">
 					{stack.map(({ title, skills }, index) => (
