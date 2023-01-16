@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import dotenv from 'dotenv';
 import axios from 'axios';
-import { getLocationName } from '../../util/location';
 
 dotenv.config();
 
@@ -21,7 +20,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           async (position) => {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
-            const locationName = await getLocationName(lat, lon);
+            // const locationName = await getLocationName(lat, lon);
             const response = await axios.get(
               `https://api.openweathermap.org/data/2.5/weather?
                 q=${location}&units=metric&appid=${process.env.WEATHER_API_KEY}`
