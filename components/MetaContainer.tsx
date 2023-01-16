@@ -6,7 +6,11 @@ import Footer from "../components/Footer";
 import { METADATA } from '../constants';
 import { motion } from "framer-motion";
 
-export default function MetaContainer({children, ...customMeta}) {
+interface MetaContainerProps {
+    children: React.ReactNode;
+}
+
+const MetaContainer: React.FC<MetaContainerProps> = ({children}) => {
     const router = useRouter();
     const meta = METADATA;
 
