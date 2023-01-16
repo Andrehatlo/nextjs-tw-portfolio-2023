@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { INTRO } from '../constants';
 import socialImg from '/public/profile.jpeg';
 import Icon from "./Icon";
-import { FaTwitter, FaGithub, FaMedium, FaLinkedinIn, Fa, FaInstagram } from 'react-icons/fa';
+import { FaTwitter, FaGithub, FaMedium, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
 
 const Main = () => {
