@@ -5,13 +5,12 @@ import { IconType } from "react-icons";
 import Icon from './Icon'
 
 interface FooterProps { 
-    children: React.ReactNode;
 }
 
-const Footer: React.FC<FooterProps> = ({children}) => {
+const Footer: React.FC<FooterProps> = ({}) => {
     const social = SOCIAL_LINKS; 
 
-    const renderIcon = (icon: IconType, name: String, index: number) => {
+    const renderIcon = (icon: IconType, index: number) => {
 		return(
 			<div className="m-2 text-black lg:text-4xl md:text-2xl sm:text-lg dark:text-blue-300" 
 				key={index}>
@@ -26,7 +25,7 @@ const Footer: React.FC<FooterProps> = ({children}) => {
                 <div className="flex flex-col items-center justify-between lg:flex-row">
                     <p>Built with Next.js, Tailwind and Typescript</p>
                     <div className="flex flex-wrap pt-2 space-x-2 font-medium sm:space-x-4 lg:pt-0">
-                        {social.map(({name, url, icon}, index) => (
+                        {social.map(({url, icon}, index) => (
                             <Link
                                 href={url}
                                 className={"transition-colors hover:text-yellow-500"}
@@ -34,7 +33,7 @@ const Footer: React.FC<FooterProps> = ({children}) => {
                                 rel="noreferrer"
                                 >
                                     <div className="flex mx-auto text-xl cursor-pointer light:text-black dark:text-white">
-                                        {renderIcon(icon, name, index)}
+                                        {renderIcon(icon, index)}
                                     </div> 
                             </Link>
                         ))}
