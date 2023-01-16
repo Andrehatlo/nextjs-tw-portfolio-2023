@@ -1,91 +1,116 @@
 // about page
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-import { motion } from 'framer-motion';
-
-
-
+import Skills from '../components/Skills';
+import { ABOUT } from '../constants';
 
 const About: NextPage = () => {
-    const [hover, setHover] = React.useState(false);
-
-    const onHover = () => {
-        setHover(true);
-    }
-    const onLeave = () => {
-        setHover(!hover);
-    }
+    const about = ABOUT;
+    const [activeSection, setActiveSection] = useState('PROF');
+    const activeProperties = activeSection === 'PROF' ? ABOUT.PROF : ABOUT.PRIV;
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            <NextSeo
-                title="About"
-                description="About page"
-            />
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center"
-            >
-                <motion.h1
-                    initial={{ y: -100, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-6xl font-bold"
-                >
-                    About
-                </motion.h1>
-                <motion.p
-                    initial={{ y: -100, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="mt-3 text-2xl"
-                >
-                    I'm a software engineer based in Norway. I have a passion for building web applications and learning new technologies. I'm currently working on a few projects and learning new technologies. I'm a huge fan of music and i love to play the guitar and recently started playing the piano.
-                </motion.p>
-                <motion.div
-                    initial={{ y: -100, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full"
-                >
-                    <Link
-                        href="/projects"
-                        className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-                    >
-                        <h3 className="text-2xl font-bold">Projects &rarr;</h3>
-                        <p className="mt-4 text-xl">
-                            Check out my projects.
-                        </p>
-                    </Link>
+        <div className="bg-gray-50 dark:bg-gray-800">
+            <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-800 md:mt-6">
+            <div className="flex flex-col items-start justify-center w-full max-w-3xl mx-auto mb-16">
+                <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
+                    {about.title}
+                </h1>
+                <h2 className="mb-16 text-gray-600 dark:text-[#c2c2c2]">
+                    <p className="mb-6">
+                        {about.PRIV.description}
+                    </p>
+                </h2>  
+                <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
+                    Funfacts
+                </h1>
+                <h2 className="prose mb-16 text-gray-600 dark:text-[#c2c2c2] dark:prose-dark">
+                    <ul className="list-disc">
+                        <li>
+                        {about.PRIV.description_2.map((item, key) =>    {
+                            return (
+                                <ul className="list-disc">
+                                    <li key={key}>
+                                    {item}
+                                    </li>
+                                </ul>
+                                )
+                            })}
 
-                    <Link
+                            <Link
+                                href="https://instagram.com/minitheboxer"
+                                className="text-primary hover:text-primary-dark dark:text-white dark:hover:text-primary-dark dark:">
+                                Mini has his own Instagram account
+                            </Link>
+                        </li>
+                    </ul>
+                </h2>
+                <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
+                    Hobbies</h1>
+                <h2 className="prose mb-16 text-gray-600 dark:text-[#c2c2c2] dark:prose-dark">
+                {about.PRIV.hobbies.map((item, key) =>    {
+                    return (
+                    <ul className="list-disc">
+                        <li key={key}>
+                        {item}
+                        </li>
+                    </ul>
+                    )
+                })}
+                </h2>
+                {/* <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
+                    Phrases
+                </h1>
+                <h2 className="prose mb-16 text-gray-600 dark:text-[#c2c2c2] dark:prose-dark">
+                {about.PRIV.phrases.map((item, key) =>    {
+                    return (
+                    <ul className="list-disc">
+                        <li key={key}>
+                        {item}
+                        </li>
+                    </ul>
+                    )
+                })}
+                </h2> */}
 
-                        href="/blog"
-                        className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-                    >
-                        <h3 className="text-2xl font-bold">Blog &rarr;</h3>
-                        <p className="mt-4 text-xl">
-                            Read my blog.
-                        </p>
-                    </Link>
+                <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
+                    {about.PROF.title}
+                    </h1>
+                    <h2 className="mb-16">
+                    <p className="text-gray-500 dark:text-[#c2c2c2]">
+                        {about.PROF.description}
+                    </p>
+                    <Skills />
+                </h2>
 
-                    <Link
-                        href="/contact"
-                        className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-                    >
-                        <h3 className="text-2xl font-bold">Contact &rarr;</h3>
-                        <p className="mt-4 text-xl">
-                            Contact me.
-                        </p>
-                    </Link>
-                </motion.div>
-            </motion.div>
+
+                <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
+                    At Work</h1>
+                <h2 className="prose mb-16 text-gray-600 dark:text-[#c2c2c2] dark:prose-dark">
+                {about.PROF.description_2.map((item, key) =>    {
+                    return (
+                    <ul className="list-disc">
+                        <li key={key}>
+                        {item}
+                        </li>
+                    </ul>
+                    )
+                })}
+                </h2>
+
+               
+
+                
+            </div>
         </div>
-    )
- }
+    </div>       
+)}
 
 export default About;
+
+
+
+                            
+            

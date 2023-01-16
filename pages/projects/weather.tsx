@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Weather: React.FC = () => {
+interface WeatherProps {}
+
+const Weather: React.FC<WeatherProps> = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
   const [location, setLocation] = useState('');
   const [place, setPlace] = useState('');
 
   {/* Weather Data  */}
-
-
   {/* Returns weather data based on LOCATION = City/Country */}
   const getWeather = async (location: string) => {
     try {
