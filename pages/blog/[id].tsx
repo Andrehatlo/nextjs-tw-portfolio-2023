@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import fs from 'fs';
 import matter from 'gray-matter';
 import md from 'markdown-it';
 import { motion, useScroll, useSpring } from 'framer-motion'
+
+
+interface Props {
+  
+}
 
 interface BlogProps {
   frontmatter: {
@@ -35,7 +40,7 @@ const Blog: React.FC<BlogProps> = ({ frontmatter, content }) => {
 
 export default Blog;
 
-const getStaticPaths = async () => {
+export async function getStaticPaths() {
   // get all the paths from slugs or file names
   const files = fs.readdirSync('posts');
   const paths = files.map(filename => ({
@@ -50,20 +55,7 @@ const getStaticPaths = async () => {
   }
 }
 
-interface getStaticPropsProps { 
-  props: {
-    frontmatter: {
-      title: string;
-      date: string;
-      socialImage: string;
-    };
-
-    content: string;
-  };
-}
-
-
-const getStaticProps = async () => {
+export async function getStaticProps( id: string ) {
   const fileName = fs.readFileSync(`posts/${id}.md`, 'utf-8');
   const { data: frontmatter, content } = matter(fileName);
   return {
