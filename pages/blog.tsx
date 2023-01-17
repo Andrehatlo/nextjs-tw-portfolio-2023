@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import BlogCard from "../components/BlogCard";
 import fs from 'fs'
 import matter from "gray-matter";
+
 
 interface BlogProps {
   posts: {
@@ -17,6 +17,7 @@ interface BlogProps {
   }[];
 }
 
+import BlogCard from '../components/BlogCard';
 
 const Blog: React.FC<BlogProps> = ({posts}) => {
   console.log(posts)
