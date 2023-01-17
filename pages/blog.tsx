@@ -4,14 +4,25 @@ import fs from 'fs'
 import matter from "gray-matter";
 
 interface BlogProps {
-  posts: any;
+  posts: {
+    slug: string;
+    data: {
+      title: string;
+      date: string;
+      metaTitle: string;
+      metaDesc: string;
+      tags: string[];
+      socialImage: string;
+    };
+  }[];
 }
 
-const Blog = (props: BlogProps) => {
-  console.log(props)
-  const [isLoading, setIsLoading] = useState(true);
-  const { posts } = props;
 
+const Blog: React.FC<BlogProps> = ({posts}) => {
+  console.log(posts)
+
+  const [isLoading, setIsLoading] = useState(true);
+  
   useEffect(() => {
     if (posts) setIsLoading(false);
   }, [posts]);
