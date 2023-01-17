@@ -5,7 +5,7 @@ interface WeatherProps {}
 
 const Weather: React.FC<WeatherProps> = () => {
   const [weatherData, setWeatherData] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
   const [location, setLocation] = useState('');
   const [place, setPlace] = useState('');
 
@@ -21,7 +21,9 @@ const Weather: React.FC<WeatherProps> = () => {
       
       console.log("getWeather: " + response.data);
     } catch (error) {
-      setError(error);
+      if (error instanceof Error) {
+        setError(error);
+       }
     }
   };
 
@@ -43,11 +45,15 @@ const Weather: React.FC<WeatherProps> = () => {
               console.log("getCurrentLocationWeather: " + response.data);
             })
             .catch((error) => {
-              setError(error);
+              if (error instanceof Error) {
+                setError(error);
+               }
             });
         },
         (error) => {
-          setError(error);
+          if (error instanceof Error) {
+            setError(error);
+           }
         }
       );
     } else {
@@ -66,7 +72,8 @@ const Weather: React.FC<WeatherProps> = () => {
       console.log("getLocationName: " + response.data);
       console.log(location)
     } catch (error) {
-      setError(error);
+      if (error instanceof Error) {
+        setError(error);
     }
   };
 
