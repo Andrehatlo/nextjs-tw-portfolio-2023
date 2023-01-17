@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import fs from 'fs'
 import matter from "gray-matter";
+// import BlogCard from '../components/BlogCard';
+import Card from '../components/Card';
+
+
 
 
 interface BlogProps {
@@ -17,11 +21,7 @@ interface BlogProps {
   }[];
 }
 
-import BlogCard from '../components/BlogCard';
-
 const Blog: React.FC<BlogProps> = ({posts}) => {
-  console.log(posts)
-
   const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
@@ -36,7 +36,8 @@ const Blog: React.FC<BlogProps> = ({posts}) => {
     <div className="justify-center w-3/4 mx-auto align-middle w-100 ">
       <div className="grid gap-2 mt-12 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map(( post, index) => (
-          <BlogCard key={index} post={post} />
+          // <BlogCard key={index} post={post} />
+          <Card key={index} post={post} />
         ))}
       </div>
     </div>
