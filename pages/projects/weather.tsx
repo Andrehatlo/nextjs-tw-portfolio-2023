@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-interface WeatherProps {}
+interface Weatherdata {
+  coord: {
+    lon: number;
+    lat: number;
+  };
+}
 
-const Weather: React.FC<WeatherProps> = () => {
+const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState<Error | null>(null);
   const [location, setLocation] = useState('');
@@ -26,6 +31,8 @@ const Weather: React.FC<WeatherProps> = () => {
        }
     }
   };
+}
+
 
   {/* Returns weather data based on Latitude & Longitude values */}
   const getCurrentLocationWeather = () => {
@@ -82,7 +89,7 @@ const Weather: React.FC<WeatherProps> = () => {
   }, []);
 
   return (
-
+  <div>
     <div className="overflow-auto">
         <div className="flex flex-col items-center h-screen"> 
             <div className="py-4 mx-auto mb-2 text-center">
@@ -148,7 +155,7 @@ const Weather: React.FC<WeatherProps> = () => {
         {error && <p>{error.message}</p>}
         </div>
       </div> 
-
+    </div>
   );
 }
   
