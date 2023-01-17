@@ -1,3 +1,4 @@
+import React, {  } from 'react';
 import { NextApiRequest, NextApiResponse } from 'next';
 import dotenv from 'dotenv';
 import axios from 'axios';
@@ -44,17 +45,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       } else {
         res.status(500).json({message: 'Geolocation is not supported by this browser'});
       }
+  } 
+} catch (error: any) {
+  let errorMessage = 'Something went wrong';
+  if (error.isAxiosError) {
+    errorMessage = error.response.data.message;
+  } else if (error instanceof Error) {
+    errorMessage = error.message;
   }
-  }catch(error){
-    let errorMessage = 'Something went wrong';
-    try {
-      errorMessage = error.response.data.message;
-    } catch (error) {
-      if(error instanceof Error){
-        errorMessage = error.message;
-      }
-    }
-    console.log(errorMessage);
-    res.status(500).json({message: errorMessage});
-  }
-};
+  console.log(errorMessage);
+  res.status(500).json({ message: errorMessage });
+}};
