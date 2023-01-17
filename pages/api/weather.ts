@@ -37,13 +37,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             res.status(200).json(response.data);
           },
           (error) => {
-            res.status(500).json({message: error.message});
+            const errorMessage = error.message;
+            res.status(500).json({message: errorMessage});
         }
       );
       } else {
         res.status(500).json({message: 'Geolocation is not supported by this browser'});
       }
-    }
+  }
   }catch(error){
     let errorMessage = 'Something went wrong';
     try {
