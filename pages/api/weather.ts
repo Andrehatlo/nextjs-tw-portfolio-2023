@@ -21,8 +21,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const { location } = req.query;
     if (location) {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?
-          q=${location}&units=metric&appid=${process.env.WEATHER_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.WEATHER_API_KEY}`
       );
       res.status(200).json(response.data);
     } else {
@@ -33,8 +32,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             const lon = position.coords.longitude;
             const locationName = await getLocationName(lat, lon);
             const response = await axios.get(
-              `https://api.openweathermap.org/data/2.5/weather?
-                q=${locationName}&units=metric&appid=${process.env.WEATHER_API_KEY}`
+              `https://api.openweathermap.org/data/2.5/weather?q=${locationName}&units=metric&appid=${process.env.WEATHER_API_KEY}`
             );
             res.status(200).json(response.data);
           },
@@ -50,10 +48,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     let errorMessage = 'Something went wrong';
     try {
       errorMessage = error.response.data.message;
-    if (error instanceof Error) {
-      errorMessage = error.message;
+    } catch (error) {
+      if(error instanceof Error){
+        errorMessage = error.message;
+      }
     }
-    console.log(error.message);
-    res.status(500).json({message: error.message});
+    console.log(errorMessage);
+    res.status(500).json({message: errorMessage});
   }
 };

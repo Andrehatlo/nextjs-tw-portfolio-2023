@@ -25,6 +25,8 @@ const Footer: React.FC<FooterProps> = ({}) => {
                 <div className="flex flex-col items-center justify-between lg:flex-row">
                     <p>Built with Next.js, Tailwind and Typescript</p>
                     <div className="flex flex-wrap pt-2 space-x-2 font-medium sm:space-x-4 lg:pt-0">
+
+                        {/* Running through constants.js SOCIAL_LINKS and rendering icoins through `renderIcon method */}
                         {social.map(({url, icon}, index) => (
                             <Link
                                 href={url}
