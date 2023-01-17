@@ -6,8 +6,6 @@ import { motion } from 'framer-motion';
 
 interface SkillsProps {}
 
-
-// Displays icons name on hover
 const Skills: React.FC<SkillsProps> = ({}) => {
 	const stack = SKILLS;
 

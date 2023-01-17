@@ -4,6 +4,17 @@ import axios from 'axios';
 
 dotenv.config();
 
+interface Locationprops {
+  lat: number;
+  lon: number; 
+}
+
+const getLocationName = async (lat: number, lon: number) => {
+  const response = await axios.get(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.WEATHER_API_KEY}`
+  );
+  return response.data.name;
+};
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -20,10 +31,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           async (position) => {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
-            // const locationName = await getLocationName(lat, lon);
+            const locationName = await getLocationName(lat, lon);
             const response = await axios.get(
               `https://api.openweathermap.org/data/2.5/weather?
-                q=${location}&units=metric&appid=${process.env.WEATHER_API_KEY}`
+                q=${locationName}&units=metric&appid=${process.env.WEATHER_API_KEY}`
             );
             res.status(200).json(response.data);
           },
@@ -36,11 +47,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       }
     }
   }catch(error){
+    let errorMessage = 'Something went wrong';
+    try {
+      errorMessage = error.response.data.message;
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    console.log(error.message);
     res.status(500).json({message: error.message});
   }
 };
-
-// Search weather on lat & lon values
-            // const response = await axios.get(
-            //   `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.WEATHER_API_KEY}`
-            // );
