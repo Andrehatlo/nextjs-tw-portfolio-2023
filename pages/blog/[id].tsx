@@ -63,7 +63,7 @@ interface getStaticPropsProps {
 }
 
 
-const getStaticProps = async ({ params: { id: String } }: getStaticPropsProps) => {
+const getStaticProps = async () => {
   const fileName = fs.readFileSync(`posts/${id}.md`, 'utf-8');
   const { data: frontmatter, content } = matter(fileName);
   return {
