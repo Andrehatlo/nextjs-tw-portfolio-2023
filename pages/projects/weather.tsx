@@ -31,7 +31,7 @@ const Weather = () => {
        }
     }
   };
-}
+
 
 
   {/* Returns weather data based on Latitude & Longitude values */}
@@ -157,6 +157,7 @@ const Weather = () => {
       </div> 
     </div>
   );
+  }
 }
   
 export default Weather;
