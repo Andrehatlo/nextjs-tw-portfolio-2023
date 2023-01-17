@@ -35,7 +35,7 @@ const Blog: React.FC<BlogProps> = ({ frontmatter, content }) => {
 
 export default Blog;
 
-export async function getStaticPaths() {
+const getStaticPaths = async () => {
   // get all the paths from slugs or file names
   const files = fs.readdirSync('posts');
   const paths = files.map(filename => ({
@@ -50,7 +50,20 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params: { id } }) {
+interface getStaticPropsProps { 
+  props: {
+    frontmatter: {
+      title: string;
+      date: string;
+      socialImage: string;
+    };
+
+    content: string;
+  };
+}
+
+
+const getStaticProps = async ({ params: { id: String } }: getStaticPropsProps) => {
   const fileName = fs.readFileSync(`posts/${id}.md`, 'utf-8');
   const { data: frontmatter, content } = matter(fileName);
   return {
