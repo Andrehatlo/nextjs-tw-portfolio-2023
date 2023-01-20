@@ -42,4 +42,4 @@ next-env.d.ts
 .env
 
 #Api files
-./pages/api/*
+./pages/api/
