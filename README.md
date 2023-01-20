@@ -12,8 +12,9 @@ Fully responsive portfolio site that includes:
 
 TODO:
 
-* Skill page (skill -> icon (fetch icons from constants.js))
-* Move CRUD to pages/api and sync with weather page
+* Fix icons in Footer
+
+
 * Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
 
 

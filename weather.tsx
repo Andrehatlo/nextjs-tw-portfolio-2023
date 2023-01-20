@@ -1,37 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-interface Weatherdata {
+interface WeatherProps {
   coord: {
     lon: number;
     lat: number;
   };
+  weather: [
+    {
+      id: number;
+      main: string;
+      description: string;
+      icon: string;
+    }
+  ];  
 }
 
 const Weather = () => {
-  const [weatherData, setWeatherData] = useState<Weatherdata | null>(nullz);
+  const [weatherData, setWeatherData] = useState<WeatherProps | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [location, setLocation] = useState('');
   const [place, setPlace] = useState('');
 
+  setWeatherData(null);
+
   {/* Weather Data  */}
   {/* Returns weather data based on LOCATION = City/Country */}
-  const getWeather = async (location: string) => {
-    try {
-      const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.WEATHER_API_KEY}`
-      );
-      setWeatherData(response.data);
-      setPlace(response.data.name);
-    
-    } catch (error) {
-      if (error instanceof Error) {
-        setError(error);
-       }
-    }
-  };
-
-
+  // const getWeather = async (location: string) => {
+  //   try {
+  //     const response = await axios.get(
+  //       `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.WEATHER_API_KEY}`
+  //     );
+  //     setWeatherData(response.data);
+  //     setPlace(response.data.name);
+      
+  //     console.log("getWeather: " + response.data);
+  //   } catch (error) {
+  //     if (error instanceof Error) {
+  //       setError(error);
+  //      }
+  //   }
+  // };
 
   {/* Returns weather data based on Latitude & Longitude values */}
   const getCurrentLocationWeather = () => {
@@ -46,8 +55,9 @@ const Weather = () => {
               `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.WEATHER_API_KEY}`
             )
             .then((response) => {
-              setWeatherData(response.data);
+              SetWeatherData(response.data);
               setPlace(response.data.name);
+              console.log("getCurrentLocationWeather: " + response.data);
             })
             .catch((error) => {
               if (error instanceof Error) {
@@ -74,6 +84,8 @@ const Weather = () => {
       );
       setLocation(response.data[0].name);
       setPlace(response.data[0].name);
+      console.log("getLocationName: " + response.data);
+      console.log(location)
     } catch (error) {
       if (error instanceof Error) {
         setError(error);
@@ -128,7 +140,7 @@ const Weather = () => {
                     Conditions
                   </p>
                   <p className="text-base font-medium text-gray-800">
-                    {weatherData.weather[0].description}
+                    {weatherData.Weather[0].description}
                   </p>
                   <img
                   src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
