@@ -44,7 +44,7 @@ export default Blog;
 export async function getStaticProps(){
   // Getting all our posts at build time
   // Get all the posts from posts folder
-  const files = fs.readdirSync("posts");
+  const files = fs.readdirSync("./posts");
   // Loop over each post to extract the frontmatter which we need
   const posts = files.map((file) => {
     // getting the slug here which we will need as a URL query parameter

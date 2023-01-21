@@ -55,7 +55,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps( id: string ) {
-  const fileName = fs.readFileSync(`posts/${id}.md`, 'utf-8');
+  const fileName = fs.readFileSync(`./posts/${id}.md`, 'utf-8');
   const { data: frontmatter, content } = matter(fileName);
   return {
     props: {
