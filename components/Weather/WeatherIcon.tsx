@@ -2,7 +2,7 @@ import React from 'react';
 
 interface Props {
     icon: string;
-    class: string;
+    alt: string;
 }
 
 const WeatherIcon: React.FC<Props> = ({ icon }) => {
