@@ -79,10 +79,6 @@ const Weather: React.FC = () => {
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&units=metric&appid=${process.env.WEATHER_API_KEY}`;
       const { data } = await axios.get<WeatherData>(url);
-      if (data.cod === '404') {
-        setErrorMessage('Location not found');
-        return;
-      }
       setWeatherData(data);
     } catch (error) {
       setErrorMessage('Spelled location wrong?');
