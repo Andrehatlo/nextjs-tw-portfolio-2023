@@ -41,7 +41,3 @@ next-env.d.ts
 # environment variables 
 .env
 
-#Api files
-./pages/api/*
-
-./modules/weather/*
