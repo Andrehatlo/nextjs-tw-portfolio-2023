@@ -19,6 +19,7 @@
     "gray-matter": "^4.0.3",
     "heroicons": "^2.0.13",
     "markdown-it": "^13.0.1",
+    "moment": "^2.29.4",
     "next": "latest",
     "next-seo": "^5.15.0",
     "next-themes": "^0.2.1",
