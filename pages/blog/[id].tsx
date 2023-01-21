@@ -4,7 +4,6 @@ import matter from 'gray-matter';
 import md from 'markdown-it';
 import { motion, useScroll, useSpring } from 'framer-motion'
 
-
 interface Props {
   
 }
