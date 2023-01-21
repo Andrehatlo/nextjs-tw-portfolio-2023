@@ -22,9 +22,7 @@ Using Wordpress, there is almost no challenge, and you end up paying for somethi
 
 <br>
 
-<center>
-<iframe src="https://giphy.com/embed/O8pa1CyYSp1yE" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-</center>
+
 <br>
 
 I wanted the right platform, for a simple programming blog and portfolio for my future projects.
