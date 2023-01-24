@@ -1,7 +1,7 @@
 ---
 title: "Jekyll: Creating a blog is easy and FREE"
 metaTitle: "Jekyll is a light weight, easy to setup system that does exactly what it is supposed to do."
-socialImage: '/images/old-images/jekyll-head.jpg'
+socialImage: '/images/jekyll-head.jpg'
 date: "2019-06-01"
 tags: 
   - Jekyll

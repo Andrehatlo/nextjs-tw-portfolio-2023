@@ -1,22 +1,18 @@
 # Next.js + Tailwind Portfolio 
 
-A Jekyll clone using NextJS, Typescript and Tailwind.
+Jekyll clone using NextJS, Typescript and Tailwind.
 
-Typescript, NextJS/13 and Tailwind.
+Built with Typescript, NextJS/13 and Tailwind.
 
+[Check out the demo](https://nextjs-tw-portfolio-2023.vercel.app/)
+
+## Features:
 Fully responsive portfolio site that includes:
 - Light/Dark Mode Themeswitcher.
 - Developer Introduction page with Social Links
 - Markdown Blog Page (Jekyll type).
 - Weather Condition Search and Geolocation Api Integration.
-
-TODO:
-
-* Fix icons in Footer
-
-
-* Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
+- Stack icon animation
 
 
 ## How to use
@@ -39,6 +35,8 @@ npm install
 npm run dev
 ```
 
+## Adding Blog Posts
+
 Add blog posts `app/posts` folder in this format:
 
 Filename will become the slug, for example filename `2022-07-01-ssg-ssr.md` is slug `/blog/2022-07-01-ssg-ssrz`
@@ -56,6 +54,8 @@ tags:
 ---
 
 # Content In Markdown Here
+```
+
 
 
 

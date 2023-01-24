@@ -65,7 +65,7 @@ export const INTRO = {
 }
 
 export const ABOUT = {
-  title: `About Me`,
+  title: `Hi!`,
   profileimg: "/public/profile.jpeg",
   PROF: {
       title: `Fullstack Developer`,
@@ -146,12 +146,6 @@ export const MENULINKS = [
       links: "/projects",
       icon: FaFeather
     },
-        // {
-    //     name: "Weather.",
-    //     links: "/weather",
-    //     icon: FaCloudSun
-        
-    // },
 ]  
   
 export const TYPED_STRINGS = [
