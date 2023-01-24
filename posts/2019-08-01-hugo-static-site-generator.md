@@ -2,7 +2,7 @@
 title: "Hugo - as a static page blog"
 metaTitle: "Hugo - as a static page blog"
 metaDesc: "Create your own blog with Hugo, a static site generator, on the same line as Jekyll."
-socialImage: "/images/old-images/hugogit.jpg"
+socialImage: "/images/hugogit.jpg"
 date: "2019-08-01"
 tags: 
   - Jekyll

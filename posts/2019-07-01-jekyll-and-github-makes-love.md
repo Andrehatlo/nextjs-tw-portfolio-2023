@@ -2,7 +2,7 @@
 title: "Jekyll + Github = Free hosting: Tutorial"
 metaTitle: "Jekyll + Github = Free hosting: Tutorial"
 metaDesc: "Create your own blog/portofolio using these technologies, with no hosting fee!"
-socialImage: '/images/old-images/jekyllgit.jpg'
+socialImage: '/images/jekyllgit.jpg'
 date: "2019-07-01"
 tags: 
   - Jekyll

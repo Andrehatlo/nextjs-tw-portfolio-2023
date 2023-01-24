@@ -1,12 +1,16 @@
 import React from "react";
 import Head from "next/head";
 import {useRouter} from "next/router";
-import Navbar from "../components/NavBar";
-import Footer from "../components/Footer";
+import Navbar from "./ui/NavBar";
+import Footer from "./ui/Footer";
 import { METADATA } from '../constants';
 import { motion } from "framer-motion";
 
-export default function MetaContainer({children, ...customMeta}) {
+interface MetaContainerProps {
+    children: React.ReactNode;
+}
+
+const MetaContainer: React.FC<MetaContainerProps> = ({children}) => {
     const router = useRouter();
     const meta = METADATA;
 
@@ -32,7 +36,7 @@ export default function MetaContainer({children, ...customMeta}) {
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:site" content="@andrehatlo"/>
                 <meta name="twitter:title" content={meta.title}/>
-                <meta name="twitter:description" content={meta.description}/>
+                <meta name="twitter:description" content={meta.description}/>w
                 <meta name="twitter:image" content={meta.image}/>
                 {meta.date && (
                     <meta property="article:published_time" content={meta.date}/>
@@ -57,3 +61,5 @@ export default function MetaContainer({children, ...customMeta}) {
         </div>
     );
 }
+
+export default MetaContainer;

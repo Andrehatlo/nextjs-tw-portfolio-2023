@@ -2,7 +2,7 @@
 title:  "React Native: State vs Props"
 metaTitle:  "React Native: State vs Props"
 metaDesc: "The question that confuses most beginners in react."
-socialImage: '/images/old-images/start-react.jpg'
+socialImage: '/images/start-react.jpg'
 date: "2020-01-01"
 tags:
     - React Native

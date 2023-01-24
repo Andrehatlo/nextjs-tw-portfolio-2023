@@ -2,7 +2,7 @@
 title: "Home Assistant - Lovelace introduction: Step 3"
 metaTitle: "Home Assistant - Lovelace introduction: Step 3"
 metaDesc: "An introduction to the Lovelace UI used in HA"
-socialImage: "/images/old-images/ha1.png"
+socialImage: "/images/ha1.png"
 date: "2020-03-01"
 tags:
     - RaspberryPi

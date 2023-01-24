@@ -2,7 +2,7 @@
 title: "GIT Command - Overwrite Trick"
 metaTitle: "GIT Command - Overwrite Trick"
 metaDesc: "A short post to all those who have difficulty with repository hell. This Git command parts the sea and brings peace back to your life"
-socialImage: "/images/old-images/git-banner.png"
+socialImage: "/images/git-banner.png"
 date: "2021-06-01"
 tags:
   - git

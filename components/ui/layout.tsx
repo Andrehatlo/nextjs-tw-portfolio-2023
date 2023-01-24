@@ -1,11 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import NavBar from '../components/NavBar';
+import NavBar from '../ui/NavBar'
+import Footer from '../ui/Footer'
 
+interface LayoutProps {
+    children: React.ReactNode;
+}
 
-
-
-const Layout = ({children}) => {
+const Layout: React.FC<LayoutProps> = ({children}) => {
     return(
         <div className="w-full min-h-screen">
             <div className='flex flex-row justify-around h-16 align-middle'>

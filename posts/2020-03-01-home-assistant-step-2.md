@@ -2,7 +2,7 @@
 title: "Home Assistant - Configuring devices: Step 2"
 metaTitle: "Home Assistant - Configuring devices: Step 2"
 metaDesc: "Going through the fundamentals of the Home Assistant web interface, and how to add/configure smart devices in your network with HA"
-socialImage: "/images/old-images/ha1.png"
+socialImage: "/images/ha1.png"
 date: "2020-03-01"
 tags:
     - RaspberryPi

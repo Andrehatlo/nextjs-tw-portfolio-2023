@@ -2,7 +2,7 @@
 title: 'TypeScript syntax summary'
 metaTitle: 'TypeScript syntax summary'
 metaDesc: "A brief summary of typescript syntax"
-socialImage: '/images/old-images/ts.jpg'
+socialImage: '/images/ts.jpg'
 date: "2019-11-01"
 tags:
     - Typescript

@@ -2,7 +2,7 @@
 title: "IntelliJ IDE - Productivity Tricks"
 metaTitle: "IntelliJ IDE - Productivity Tricks"
 metaDesc: "A summery of my favorite keyboard shortcuts and tricks to boost productivity in the intelliJ IDE"
-socialImage: "/images/old-images/intellij-logo.png"
+socialImage: /images/intellij-logo.png
 date: "2021-03-10"
 tags:
   - IntelliJ

@@ -2,7 +2,7 @@
 title:  "Home Assistant - HA & PI: Step 1"
 metaTitle:  "Home Assistant - HA & PI: Step 1"
 metaDesc: "Automating my home with home assistant and raspberry pi. How to install HA on the Raspberry Pi 3 B+ ?"
-socialImage: '/images/old-images/ha1.png'
+socialImage: '/images/ha1.png'
 date: "2020-02-01"
 tags:
     - RaspberryPi

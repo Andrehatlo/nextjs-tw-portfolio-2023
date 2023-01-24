@@ -2,7 +2,7 @@
 title: "Reactive Data Streams - quick rxJava Summery"
 metaTitle: "Reactive Data Streams - quick rxJava Summery"
 metaDesc: "Inpired by the Reactive movement - manifesto, rxJava is an implementation of Reactive Stream specification created by netflix. "
-socialImage: "/images/old-images/netflix.png"
+socialImage: "/images/netflix.png"
 date: "2020-04-01"
 tags:
     - Java

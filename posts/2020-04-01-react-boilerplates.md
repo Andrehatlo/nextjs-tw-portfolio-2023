@@ -2,7 +2,7 @@
 title: "React Native: Boilerplates overview"
 metaTitle: "React Native: Boilerplates overview"
 metaDesc: "It can take a few weeks (if not months) getting started with React Native, can boilerplates give a jump start to mobile development? And if so, which are the best?"
-socialImage: "/images/old-images/react-boiler.jpg"
+socialImage: "/images/react-boiler.jpg"
 date: "2020-04-01"
 tags:
     - React Native

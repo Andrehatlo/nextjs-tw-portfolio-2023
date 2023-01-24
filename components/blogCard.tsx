@@ -1,11 +1,24 @@
 import React from 'react';
 import Link from 'next/link';
 
-const BlogCard = ({post}) => {
+interface BlogCardProps {
+    post: {
+        slug: string;
+        data: {
+            title: string;
+            date: string;
+            metaTitle: string;
+            metaDesc: string;
+            tags: string[];
+            socialImage: string;
+        };
+    };
+}
+
+const BlogCard: React.FC<BlogCardProps> = ({post}) => {
     console.log(post.data.tags);
     console.log(post);
     return (
-        // h-full mx-auto mb-16 w-100
         <div className="container flex flex-wrap w-full p-6 mx-auto transition duration-500 transform hover:scale-110"> 
             <article className="max-w-md mt-4 duration-300 rounded-md shadow-lg dark:shadow-slate-50 dark:shadow-lg hover:shadow-sm hover:shadow-indigo-500/40">
             <Link href={`blog/${post.slug}`} >
