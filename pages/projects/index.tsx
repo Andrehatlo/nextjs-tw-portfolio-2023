@@ -27,13 +27,13 @@ const Projects: React.FC<ProjectsProps> = ({}) => {
                 <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
                     <Link href="/projects/Forecast" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
                             <h3 className="text-2xl font-bold">
-                                3 Day Weather Forcast &rarr;
+                                Weather Forcast &rarr;
                                 </h3>
                             <p className="mt-4 text-xl">
                                 A 3 day weather forcast app made with React and Tailwind CSS.
                             </p>
                     </Link>
-                    <Link href="/projects/Weather" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
+                    <Link href="/projects/weather" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
                             <h3 className="text-2xl font-bold">Weather Conditions &rarr;</h3>
                             <p className="mt-4 text-xl">
                                 Simple weather app made with React and Tailwind CSS.

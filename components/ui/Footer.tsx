@@ -1,8 +1,9 @@
 import React from "react";
 import Link from 'next/link';
-import { SOCIAL_LINKS } from "../constants";
+import { SOCIAL_LINKS } from "../../constants";
 import { IconType } from "react-icons";
-import Icon from './Icon'
+import { Icon } from '../Icon'
+import {motion} from 'framer-motion';
 
 interface FooterProps { 
 }
@@ -10,11 +11,32 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({}) => {
     const social = SOCIAL_LINKS; 
 
-    const renderIcon = (icon: IconType, index: number) => {
+    const renderIcon = (icon: IconType, name: string, index: number) => {
 		return(
-			<div className="m-2 text-black lg:text-4xl md:text-2xl sm:text-lg dark:text-blue-300" 
-				key={index}>
-					<Icon icon = {icon} children = {""}/>
+			<div 
+				className="m-2 text-black lg:text-4xl md:text-2xl sm:text-lg dark:text-blue-300" 
+				key={index} 
+			>
+                <motion.div
+				className="flex justify-between mb-8"
+				initial={{ x: 100, opacity: 0 }}
+				animate={{ x: 0, opacity: 1 }}
+				transition={{
+					delay: 0.1,
+				}}
+                >   
+                    <Icon icon = {icon} children = {
+						<motion.h2
+							initial={{ x: 100, opacity: 0 }}
+							animate={{ x: 0, opacity: 1 }}
+							transition={{
+							delay: 0.2,
+							}}
+							className="font-bold tracking-tight lg:text-2xl md:text-xl sm:text-lg">
+								{name}
+						</motion.h2>} 
+					/> 
+				</motion.div>
 			</div>
 		);
 	}
@@ -27,15 +49,10 @@ const Footer: React.FC<FooterProps> = ({}) => {
                     <div className="flex flex-wrap pt-2 space-x-2 font-medium sm:space-x-4 lg:pt-0">
 
                         {/* Running through constants.js SOCIAL_LINKS and rendering icoins through `renderIcon method */}
-                        {social.map(({url, icon}, index) => (
-                            <Link
-                                href={url}
-                                className={"transition-colors hover:text-yellow-500"}
-                                target="_blank"
-                                rel="noreferrer"
-                                >
+                        {social.map(({icon, name, url}, index) => (
+                            <Link href={url} key={index}>
                                     <div className="flex mx-auto text-xl cursor-pointer light:text-black dark:text-white">
-                                        {renderIcon(icon, index)}
+                                        {renderIcon(icon, name, index)}
                                     </div> 
                             </Link>
                         ))}

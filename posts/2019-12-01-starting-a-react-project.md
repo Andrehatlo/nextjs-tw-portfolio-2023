@@ -2,7 +2,7 @@
 title:  "Starting a React Native project with Expo"
 metaTitle:  "Starting a React Native project with Expo"
 metaDesc: "How to start using react native with Expo"
-socialImage: '/images/start-react.jpg'
+socialImage: /images/start-react.jpg
 date: "2019-12-01"
 tags:
     - node

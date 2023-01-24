@@ -1,15 +1,15 @@
 import React, { useState } from "react"
 import Image from "next/image"
 import Link from 'next/link'
-import { INTRO } from '../constants';
+import { INTRO, SOCIAL_LINKS } from '../constants';
 import socialImg from '/public/profile.jpeg';
-import Icon from "./Icon";
-import { FaTwitter, FaGithub, FaMedium, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { Icon } from "./Icon";
 
 interface MainProps {}
 
 const Main: React.FC<MainProps> = () => {
     const intro = INTRO;
+    const SocialLinks = SOCIAL_LINKS;
 
     return (
         <div 
@@ -78,29 +78,15 @@ const Main: React.FC<MainProps> = () => {
                     <div className="flex justify-center mt-6 ">
                         <div
                             className="flex space-x-4 font-medium light:text-gray-800 md:flex lg:flex sm:flex sm:block dark:text-white">
-                            <Link target="_blank" rel="noreferrer" 
-                                href="https://twitter.com/andrehatlo"
-                                className="transition-colors hover:text-sky-500">
-                                    <FaTwitter/>
-                                
-                            </Link>
-                            <Link className="transition-colors hover:text-sky-500" target="_blank" rel="noreferrer"
-                               href="https://www.linkedin.com/in/andrehatlo">
-                                <FaLinkedinIn/>
-                                
-                            </Link>
-                            <Link className="transition-colors hover:text-sky-500" target="_blank" rel="noreferrer"
-                               href="https://github.com/andrehatlo">
-                                    <FaGithub/>
-                                
-                            </Link>
-                            <Link href="" className="transition-colors hover:text-sky-500" target="_blank" rel="noreferrer">
-                                <FaInstagram/>
-                            </Link>
-                            <Link className="transition-colors hover:text-sky-500" target="_blank" rel="noreferrer"
-                                   href="https://andrehatlo.medium.com">
-                                    <FaMedium/>
-                            </Link>
+                            {SocialLinks.map(({name,url, icon}, index) => (
+                                <div key={index}>
+                                    <Link target="_blank" rel="noreferrer" 
+                                        href={url}
+                                        className="transirion-colors hover:text-sky-500">
+                                            <Icon icon={icon} children={" "}/>
+                                    </Link>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

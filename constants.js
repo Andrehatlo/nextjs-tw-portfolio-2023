@@ -1,47 +1,58 @@
-import { FaLinkedinIn, FaGithub, FaDev, FaSass, FaNodeJs, FaPen, FaFeather, FaCloudSun, FaCrown, FaEnvelope } from 'react-icons/fa';
-import { 
-  SiSpring, 
-  SiJava, 
-  SiPostgresql, 
-  SiReact, 
-  SiHtml5, 
-  SiCss3, 
-  SiGraphql,
-  SiApollo,
-  SiRuby, 
-  SiRubyonrails, 
-  SiHeroku, 
-  SiMysql,
-  SiTailwindcss, 
-  SiStyledcomponents, 
-  SiJavascript, 
-  SiTypescript, 
-  SiPython, 
-  SiNextDotJs, 
-  SiExpress, 
-  SiBootstrap, 
-  SiMaterialUi, 
-  SiMongodb, 
-  SiRedis, 
-  SiSqlite, 
-  SiJest, 
-  SiCypress, 
-  SiMockito, 
-  SiSelenium, 
-  SiRspec, 
-  SiCucumber, 
-  SiGithub, 
-  SiJira, 
-  SiConfluence, 
-  SiSlack, 
-  SiAmazonaws, 
-  SiGooglecloud, 
-  SiDigitalocean, 
-  SiNetlify, 
-  SiVercel, 
-  SiTrello, 
-  SiAdobephotoshop, 
-  SiAdobeillustrator  } from "react-icons/si";
+import { FaCrown, FaEnvelope, FaPen, FaFeather, FaGithub, FaLinkedinIn, FaSass, FaDev } from 'react-icons/fa'
+import { SiSpring, SiJava, SiPostgresql, SiReact, SiHtml5, SiCss3, SiGraphql,SiRuby, SiRubyonrails, SiMysql, SiTailwindcss, SiStyledcomponents, SiJavascript, SiTypescript, SiPython, SiMongodb, SiSqlite, SiJest, SiSelenium, SiCucumber, SiGithub, SiJira, SiConfluence, SiSlack } from "react-icons/si";
+
+
+export const SKILLS = [
+  { title: 'Languages',
+    skills: [
+      { name: "HTML5", icon: SiHtml5, url: "https://html.com/blog/html-5-cheat-sheets/" },
+      { name: "CSS3", icon: SiCss3, url: "https://websitesetup.org/css3-cheat-sheet/"   },
+      { name: "SASS", icon: FaSass, url: "https://devhints.io/sass" },
+      { name: "JavaScript", icon: SiJavascript, url:"https://htmlcheatsheet.com/js/"  },
+      { name: "TypeScript", icon: SiTypescript, url: "https://www.typescriptlang.org/cheatsheets" },
+      { name: "Java", icon: SiJava, url: "https://github.com/yungnickyoung/Java-Cheatsheet" },
+      { name: "Python", icon: SiPython, url: "https://www.pythoncheatsheet.org/" },
+      { name: "Ruby", icon: SiRuby, url: "https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-introduction-to-ruby-u/cheatsheet"}
+    ]
+  },
+  { title: 'Frameworks',
+    skills: [
+      { name: "Rails", icon: SiRubyonrails, url: "https://gist.github.com/mdang/95b4f54cadf12e7e0415" },
+      { name: "React", icon: SiReact, url: "https://devhints.io/react" },
+      { name: "GraphQL", icon: SiGraphql, url: "https://devhints.io/graphql" },
+      { name: "Spring", icon: SiSpring, url: "https://gist.github.com/jahe/0bdb68fc7ffecc196530" },
+    ]
+  },
+  { title: 'Databases',
+    skills: [
+      { name: "PostgreSQL", icon: SiPostgresql, url: "https://gist.github.com/jahe/0bdb68fc7ffecc196530" },
+      { name: "MySQL", icon: SiMysql, url: "https://devhints.io/mysql" },
+      { name: "SQLite", icon: SiSqlite, url: "https://www.sqlitetutorial.net/sqlite-cheat-sheet/" },
+      { name: "MongoDB", icon: SiMongodb, url: "https://www.mongodb.com/developer/products/mongodb/cheat-sheet/"  },
+    ]
+  },
+  { title: 'Styling',
+    skills: [
+      { name: "Tailwind CSS", icon: SiTailwindcss, url: "https://nerdcave.com/tailwind-cheat-sheet" },
+      { name: "Styled Components", icon: SiStyledcomponents, url: "https://scalablecss.com/static/Styled-Components-Cheat-Sheet-c9ef20eda7095a43b5e4c80b36b545a4.pdf" },
+    ]
+  },
+  { title: 'Testing',
+    skills: [
+      { name: "Jest", icon: SiJest, url: "https://github.com/sapegin/jest-cheat-sheet" },
+      { name: "Selenium", icon: SiSelenium, url: "https://intellipaat.com/blog/tutorial/selenium-tutorial/selenium-cheat-sheet/" },
+      { name: "Cucumber", icon: SiCucumber, url: "https://gist.github.com/yuriiik/5728701"},
+    ]
+  },
+  { title: 'Tools',
+    skills: [
+      { name: "Github", icon: SiGithub, url: "https://education.github.com/git-cheat-sheet-education.pdf"},
+      { name: "Slack", icon: SiSlack, url: "https://cpb-us-e1.wpmucdn.com/blogs.cornell.edu/dist/2/8459/files/2019/02/The-Ultimate-Slack-Cheat-Sheet-1672rod.pdf"},
+      { name: "Jira", icon: SiJira, url: "https://cheatography.com/perturbatio/cheat-sheets/jira/"},
+      { name: "Confluence", icon: SiConfluence, url: "https://cheatography.com/tgdchmi2/cheat-sheets/confluence-markup/" },
+    ]
+  },
+];
 
 export const INTRO = {
   title: `Welcome To My Portfolio`,
@@ -93,61 +104,6 @@ export const ABOUT = {
   },
 }
 
-export const SKILLS = [
-  { title: 'languages',
-    skills: [
-      { name: "HTML5", icon: SiHtml5 },
-      { name: "CSS3", icon: SiCss3  },
-      { name: "SASS", icon: FaSass },
-      { name: "JavaScript", icon: SiJavascript },
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "Sass", icon: FaSass },
-      { name: "Java", icon: SiJava  },
-      { name: "Python", icon: SiPython },
-      { name: "Ruby", icon: SiRuby }
-    ]
-  },
-  { title: 'langFrameworks',
-    skills: [
-      { name: "Rails", icon: SiRubyonrails },
-      { name: "React", icon: SiReact },
-      { name: "GraphQL", icon: SiGraphql },
-      { name: "Spring", icon: SiSpring },
-    ]
-  },
-  { title: 'Databases',
-    skills: [
-      { name: "PostgreSQL", icon: SiPostgresql },
-      { name: "Redis", icon: SiRedis },
-      { name: "MySQL", icon: SiMysql },
-      { name: "SQLite", icon: SiSqlite },
-      { name: "MongoDB", icon: SiMongodb  },
-    ]
-  },
-  { title: 'StylingFrameworks',
-    skills: [
-      { name: "Tailwind CSS", icon: SiTailwindcss },
-      { name: "Styled Components", icon: SiStyledcomponents },
-    ]
-  },
-  { title: 'TestingFrameworks',
-    skills: [
-      { name: "Jest", icon: SiJest },
-      { name: "Cypress", icon: SiCypress },
-      { name: "Selenium", icon: SiSelenium},
-      { name: "Cucumber", icon: SiCucumber},
-    ]
-  },
-  { title: 'tools',
-
-    skills: [
-      { name: "Github", icon: SiGithub},
-      { name: "Slack", icon: SiSlack },
-      { name: "Jira", icon: SiJira },
-      { name: "Confluence", icon: SiConfluence },
-    ]
-  },
-];
     
 export const METADATA = {
   title: "HATLO",
@@ -179,12 +135,12 @@ export const MENULINKS = [
         links: "/about",
         icon: FaCrown
     },
-    // {
+    {
 
-    //     name: "Contact.",
-    //     links: "/contact",
-    //     icon: FaFeather
-    // },
+        name: "Stack.",
+        links: "/stack",
+        icon: FaFeather
+    },
     {
       name: "Projects.",
       links: "/projects",
@@ -205,28 +161,22 @@ export const TYPED_STRINGS = [
 
 export const SOCIAL_LINKS = [
   {
-    name: "Mail",
+    name: "MailMe",
     url: "mailto: andrehatlo@icloud.com",
     icon: FaEnvelope  },
   {
-    name: "LinkedIn",
+    name: "Checkout my LinkedIn",
     url: "https://www.linkedin.com/in/andrehatlo/",
     icon: FaLinkedinIn  },
   {
-    name: "Github",
+    name: "See My Git",
     url: "https://github.com/andrehatlo",
     icon: FaGithub  },
   {
-    name: "Dev.to",
+    name: "Articles on Dev.to",
     url: "https://dev.to/andrehatlo",
     icon: FaDev  }
 ];
-
-
-
-  
-
-  
 
 // export const PROJECTS = [
 //   {
