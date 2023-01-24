@@ -3,7 +3,7 @@ import { SKILLS } from '../constants';
 import { IconType }   from 'react-icons/lib';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Icon }  from '../components/Icon';
+import { HoverIcon }  from '../components/HoverIcon';
 
 interface SkillsProps {}
 
@@ -15,7 +15,7 @@ const Skills: React.FC<SkillsProps> = ({}) => {
 			<div className="m-2 text-black lg:text-4xl md:text-2xl sm:text-lg dark:text-blue-300" key={index}>
 		
 				<motion.div className="flex justify-between mb-8" initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }}>   
-                    <Icon icon = {icon} children = {
+                    <HoverIcon icon = {icon} children = {
 						<motion.h2 initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="font-bold tracking-tight lg:text-2xl md:text-xl sm:text-lg">
 							{name}
 						</motion.h2>} 
