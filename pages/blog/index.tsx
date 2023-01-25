@@ -41,7 +41,7 @@ interface BlogProps {
 
 
 const Blog: React.FC<BlogProps> = ({posts}) => {
-  console.log(posts);
+  // console.log(posts);
   const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
