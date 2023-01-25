@@ -9,7 +9,7 @@ export const getPostsFiles = () => {
 }
 
 export function getPostData(postIndentifier) {
-    //extraxt slug from filename
+    //extrakt slug from filename
     const postSlug = postIndentifier.replace(/\.md$/, '');
 
     const filePath = path.join(postDirectory, `${postSlug}.md`);
@@ -49,7 +49,7 @@ export function getPostByTopic(topic) {
 }
 
 export function getLatestsPosts() {
-    const postFiles = gfetPostsFiles();
+    const postFiles = getPostsFiles();
 
     const allPosts = postFiles.map(postFile => {
         return getPostData(postFile);
@@ -68,6 +68,5 @@ export function getLatestsPosts() {
     const sortedPosts = latestPost.sort((postA, postB) => postA > postB ? -1 : 1);
 
     return sortedPosts;
-
 }
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { NextPage } from 'next';
 import {ABOUT}  from '../constants';
+import Skills from '../components/Skills'
 
 
 const About: NextPage = () => {
@@ -84,9 +85,7 @@ const About: NextPage = () => {
                     </p>
                     
                 </h2>
-
-
-
+                <Skills/>
                 <h1 className="mb-4 text-xl font-bold tracking-tight text-black dark:text-white md:text-3xl">
                     At Work</h1>
                 <h2 className="prose mb-16 text-gray-600 dark:text-gray-600 dark:prose-dark">

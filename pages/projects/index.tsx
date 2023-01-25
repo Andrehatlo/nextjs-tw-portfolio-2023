@@ -42,7 +42,7 @@ const Projects: React.FC<ProjectsProps> = ({}) => {
                     <Link href="/" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
                             <h3 className="text-2xl font-bold">Next.js, Tailwind Portfolio &rarr;</h3>
                             <p className="mt-4 text-xl">
-                                Built from scratch with markdown blogging functionality, animation and more. Btw you're on it right now! 
+                                Responsive Portfolio from scratch. Blog, Projects, Stack, Icon and site animation. Btw you're on it right now! 
                             </p>
                     </Link>
 
