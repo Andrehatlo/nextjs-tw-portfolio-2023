@@ -5,6 +5,7 @@ const rootDir = './';
 const postDir = 'posts';
 const fs = require('fs');
 
+
 export const readFilesInPostFolder = async () => {
   try {
     const folder = path.join(rootDir, postDir);
@@ -46,7 +47,10 @@ export const parseContent = async () => {
                 content
             }
         }));
-        return posts;
+        // Sorting with newest date blog out first 
+        const sortedPosts = posts.sort((postA, postB) => postA.frontmatter.date > postB.frontmatter.date ? -1 : 1)
+        
+        return sortedPosts;
     } catch (err) {
         throw err;
     }

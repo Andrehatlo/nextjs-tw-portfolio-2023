@@ -39,10 +39,6 @@ interface BlogProps {
   }[];
 }
 
-interface PostFile {
-  fileSlug: string;
-  filePath: string;
-}
 
 const Blog: React.FC<BlogProps> = ({posts}) => {
   console.log(posts);

@@ -1,7 +1,6 @@
 import { FaCrown, FaEnvelope, FaPen, FaFeather, FaGithub, FaLinkedinIn, FaSass, FaDev } from 'react-icons/fa'
 import { SiSpring, SiJava, SiPostgresql, SiReact, SiHtml5, SiCss3, SiGraphql,SiRuby, SiRubyonrails, SiMysql, SiTailwindcss, SiStyledcomponents, SiJavascript, SiTypescript, SiPython, SiMongodb, SiSqlite, SiJest, SiSelenium, SiCucumber, SiGithub, SiJira, SiConfluence, SiSlack } from "react-icons/si";
 
-
 export const SKILLS = [
   { title: 'Languages',
     skills: [
@@ -81,10 +80,10 @@ export const ABOUT = {
     title: `Me Personally`,
     subtitle: `I'm a 31 years of age. Currently living in Drammen, Norway. I love to spread good vibes by having a good laugh, having a good time and values my time.`,
     description: `I was born in Norway but traveled to Saudi Arabia when i was 6 years old. I attended a international private school that resembles something out of Harry Potter movie. Here I attended both computer, technology and chess clubs.
-                  When we got our first computer I was stuck, I've been playing around with it, tought myself to code and been coding ever since.`,
+                  When we got our first computer I was stuck, I've been playing around with it, taught myself to code basic html and css. Thats when i found out i wanted to be a developer.`,
     description_2: [
       `I play the guitar and currently learning to play the piano.`,
-      `I built and maintain a family E-Commerce store we I sell oriental lamps.`,
+      `I built and maintain a family E-Commerce store we I sell Oriental Lamps. OrientDesign.no`,
       `I have a dog, a 6 years old Boxer/American Bulldog mix and weighs 35kg.`,
     ],
     hobbies: [
@@ -92,7 +91,6 @@ export const ABOUT = {
       `🎧 Music`,
       `📚 Reading`,
       `🏋️‍♂️ Gym`,
-      `🎨 Art`,
       `🎥 Movies`,
       `🎬 TV Shows`,
     ],
@@ -129,17 +127,10 @@ export const MENULINKS = [
         links: "/blog",
         icon: FaPen
     },
-
     {
         name: "About.",
         links: "/about",
         icon: FaCrown
-    },
-    {
-
-        name: "Stack.",
-        links: "/stack",
-        icon: FaFeather
     },
     {
       name: "Projects.",
@@ -159,15 +150,15 @@ export const SOCIAL_LINKS = [
     url: "mailto: andrehatlo@icloud.com",
     icon: FaEnvelope  },
   {
-    name: "Checkout my LinkedIn",
+    name: "LinkedIn",
     url: "https://www.linkedin.com/in/andrehatlo/",
     icon: FaLinkedinIn  },
   {
-    name: "See My Git",
+    name: "My Git",
     url: "https://github.com/andrehatlo",
     icon: FaGithub  },
   {
-    name: "Articles on Dev.to",
+    name: "Dev.to",
     url: "https://dev.to/andrehatlo",
     icon: FaDev  }
 ];
@@ -235,7 +226,7 @@ export const SOCIAL_LINKS = [
 //     responsibilities: [
 //       "Maintained and designed websites for clients",
 //       "Developed features both backend and frontend",
-//       "Everything from simple maintainance to implementing ETL loaders.",
+//       "Everything from simple fixes to implementing new sites.",
 //     ],
 //     url: "https://andrehatlo.com/",
 //   }
