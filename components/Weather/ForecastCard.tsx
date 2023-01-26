@@ -55,7 +55,7 @@ const ForecastCard: React.FC<ForecastProps> = (props, key) => {
                     </div>
                     <div className='grid grid-col-2 gap-4 items-center justify-center'>
                         <div className="text-l font-medium font-poppins tracking-widest">
-                            {props.rain ? `Rain: ${props.rain['3h']}mm}` : ``}
+                            {props.rain ? `Rain: ${props.rain['3h']}mm` : ``}
                         </div>
                         <div className="text-l font-medium font-poppins tracking-widest">
                             {props.snow ? `Snow: ${props.snow['3h']}mm` : ``}
