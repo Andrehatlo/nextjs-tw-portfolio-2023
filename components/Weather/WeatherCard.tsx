@@ -26,6 +26,12 @@ interface WeatherCardProps {
             pressure: number;
             humidity: number;
         };
+        snow?: {
+            '1h': number;
+        };
+        rain?: {
+            '1h': number;
+        };
         dt: number;
         sys: {
             type: number;
@@ -38,41 +44,45 @@ interface WeatherCardProps {
         
 }
 
-
-
 const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData }) => {
     return (
-        <div className="flex text-center p-4 mt-4">
-                <div className="items-center justify-center flex-col">
-                    <ul>
-                        <li className="flex flex-col items-center justify-center font-poppins tracking-widest">
-                            <p className="text-2xl font-bold">
-                                {moment(weatherData.dt).format('dddd MM/DD') }
-                            </p>
-                        </li>
-                        <li>
-                            <p className="text-xl font-bold font-poppins tracking-widest">
-                                {Math.round(weatherData.main.temp)}°C
-                            </p>
-                        </li>
-                        <li className='flex flex-col items-center justify-center font-poppins tracking-widest'>
-                            <p className="text-xl font-bold ">
-                                {weatherData.weather[0].description.toUpperCase()}
-                            </p>
-                            <WeatherIcon icon={weatherData.weather[0].icon} alt={weatherData.weather[0].description} />
-                        </li>
-                        <li className="flex pr-4 py-5 font-medium font-poppins tracking-widest top-2 flex-col content-between space-y-2">
-                            <li>
-                                Feels like: {Math.round(weatherData.main.feels_like)}°C
-                            </li>
-                            {!weatherData.main.temp_min? `${` `}` : `${<li>Min: {Math.round(weatherData.main.temp_min)}°C</li>}`}
-                            {!weatherData.main.temp_max? `${` `}` : `${<li>Max: {Math.round(weatherData.main.temp_max)}°C</li>}`}
-
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
+             <>
+             <div className="pt-5 p-4 text-center font-bold text-gray-600 border-opacity-40 border border-white-600 shadow-lg drop-shadow-lg">
+                 <div className="grid grid-row-2 gap-4 text-center md:flex-col sm:flex-col ">
+                     <div className="text-sm font-medium  font-poppins tracking-widest">
+                         {moment(weatherData.dt).format('MM/DD')}
+                     </div>
+                     <div className="text-md div text-bold  font-poppins tracking-widest">
+                         {moment(weatherData.dt).format('dddd')}
+                     </div>
+                 
+                 </div>
+                 <div className="text-sm font-medium"> 
+                         {weatherData.weather[0].description.toUpperCase()}
+                 </div>
+                 <div className="flex items-center justify-center mx-auto drop-shadow-lg">
+                     <WeatherIcon icon={weatherData.weather[0].icon} alt={weatherData.weather[0].description}  />
+                 </div>
+                 <div className="text-xl font-medium font-poppins tracking-widest"> 
+                             {Math.round(weatherData.main.temp)}°C
+                         </div>
+                 <div className="grid grid-cols-1 gap-4 text-center md:flex-col sm:flex-col p-4">
+                     <div className='grid grid-row-2 gap-4 items-center justify-center'>
+                         <div className="text-l font-medium font-poppins tracking-widest"> 
+                             Feels {Math.round(weatherData.main.feels_like)}°C
+                         </div>
+                     </div>
+                     <div className='grid grid-col-2 gap-4 items-center justify-center'>
+                         <div className="text-l font-medium font-poppins tracking-widest">
+                             {weatherData.rain ? `Rain: ${weatherData.rain['1h']}mm}` : ``}
+                         </div>
+                         <div className="text-l font-medium font-poppins tracking-widest">
+                             {weatherData.snow ? `Snow: ${weatherData.snow['1h']}mm` : ``}
+                          </div>
+                     </div>
+                 </div>
+             </div>
+          </>
     );
 };
 

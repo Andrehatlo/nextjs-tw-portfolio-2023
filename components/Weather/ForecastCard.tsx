@@ -37,7 +37,6 @@ const ForecastCard: React.FC<ForecastProps> = (props, key) => {
                     <div className="text-md div text-bold  font-poppins tracking-widest">
                         {moment(props.dt_txt).format('dddd')}
                     </div>
-                
                 </div>
                 <div className="text-sm font-medium"> 
                         {props.weather[0].description.toUpperCase()}

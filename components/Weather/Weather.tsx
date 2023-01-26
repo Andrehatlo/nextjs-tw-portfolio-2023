@@ -32,6 +32,9 @@ interface WeatherData {
   rain: {
     '1h': number;
   }
+  snow: {
+    '1h': number;
+  }
   wind: {
     speed: number;
     deg: number;
@@ -58,21 +61,6 @@ const Weather: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [location, setLocation] = useState('');
 
-  const getWeather = async (location: string) => {
-    try {
-      const response = await axios.get(
-
-        `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.WEATHER_API_KEY}`
-      );
-      setWeatherData(response.data);
-      setLocation(response.data.name);
-    } catch (error: any) {
-      if (error) {
-        setErrorMessage(error);
-      }
-    }
-  };
-
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const searchTerm = e.currentTarget.searchTerm.value;
@@ -92,24 +80,26 @@ const Weather: React.FC = () => {
   };
 
   return (
-    <div>
-      <div className="flex flex-col items-center justify-center flex-shrink h-screen">
-        <h1 className="text-3xl font-bold">
-            Whats the Weather in {location ? location : '...'}
-        </h1>
-        <Search onSearch={handleSearch} />
-        {weatherData && (          
-          <div className="flex p-4 mt-4 text-center text-white rounded-lg shadow-lg bg-fuchsia-400 dark:bg-yellow-400 dark:text-black shadow-sky-700 dark:shadow-cyan-400"> 
-            <WeatherCard weatherData={weatherData}  />
+        <div className="flex flex-col items-center justify-center h-screen mx-auto">
+          <h1 className="text-3xl font-bold">
+              The Weather
+          </h1>
+          <h1 className="text-3xl font-bold">
+             {location ? location : '...'}
+          </h1>
+          <div className="p-4 pb-4">
+              <Search onSearch={handleSearch} />
           </div>
-        )}
-        {errorMessage && (
-          <div className="flex flex-col items-center justify-center p-4 mt-4 text-center bg-red-200 rounded-lg shadow-lg shadow-sky-700">
-            <p className="text-xl font-bold text-red-700">{errorMessage}</p>
+          <div className="container grid grid-cols-3">
+            <div></div>
+            <div className="text-center md:flex-col sm:flex-col pt-5">
+                {weatherData && (
+                    <WeatherCard weatherData={weatherData} />
+                )}
+                {errorMessage && <p>{errorMessage}</p>}
+            </div>
           </div>
-        )}
-      </div>
-    </div>
+        </div>
   );
 };
 
