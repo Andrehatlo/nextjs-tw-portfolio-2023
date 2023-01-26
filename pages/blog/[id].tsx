@@ -24,7 +24,6 @@ const Blog: React.FC<BlogProps> = ({ post }) => {
           alt={post.frontmatter.title}
           className="relative w-3/4 max-w-2xl mx-auto filter grayscale hover:grayscale-0"
         />
-          {/* <img src={`${post.frontmatter.socialImage}`} className="relative w-3/4 max-w-2xl mx-auto filter grayscale hover:grayscale-0" /> */}
         <h1 className="text-3xl ">{post.frontmatter.title}</h1>          
         <div className="" dangerouslySetInnerHTML={{ __html: md().render(post.content) }} />
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Search from './Search';
 import WeatherIcon from './WeatherIcon';
+import WeatherCard from './WeatherCard';
 
 // openweathermap.org api weather data 
 
@@ -28,6 +29,12 @@ interface WeatherData {
     humidity: number;
   };
   visibility: number;
+  rain: {
+    '1h': number;
+  }
+  snow: {
+    '1h': number;
+  }
   wind: {
     speed: number;
     deg: number;
@@ -54,21 +61,6 @@ const Weather: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [location, setLocation] = useState('');
 
-  const getWeather = async (location: string) => {
-    try {
-      const response = await axios.get(
-
-        `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.WEATHER_API_KEY}`
-      );
-      setWeatherData(response.data);
-      setLocation(response.data.name);
-    } catch (error: any) {
-      if (error) {
-        setErrorMessage(error);
-      }
-    }
-  };
-
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const searchTerm = e.currentTarget.searchTerm.value;
@@ -80,6 +72,7 @@ const Weather: React.FC = () => {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&units=metric&appid=${process.env.WEATHER_API_KEY}`;
       const { data } = await axios.get<WeatherData>(url);
       setWeatherData(data);
+      setLocation(data.name);
     } catch (error) {
       setErrorMessage('Spelled location wrong?');
       console.log(error);
@@ -87,58 +80,26 @@ const Weather: React.FC = () => {
   };
 
   return (
-    <div>
-
-      <div className="flex flex-col items-center justify-center flex-shrink h-screen">
-        <h1 className="text-3xl font-bold">
-                    Whats the Weather
-        </h1>
-        <Search onSearch={handleSearch} />
-        {weatherData && (
-              <div className="flex p-4 mt-4 text-center text-white rounded-lg shadow-lg bg-fuchsia-400 dark:bg-yellow-400 dark:text-black shadow-sky-700 dark:shadow-cyan-400">
-          <div className="flex items-center justify-center flex-cola">
-              <ul>
-                <li>
-                  <p className="text-2xl font-bold ">
-                    {weatherData.name}
-                  </p>
-                </li>
-                <li>
-                  <p className="text-xl font-bold ">
-                    Temp: {weatherData.main.temp}°C
-                  </p>
-                </li>
-                <li>
-                  <div className="flex flex-col items-center justify-center">
-                    <li>
-                      <p className="text-xl font-bold ">
-                        {weatherData.weather[0].description.toUpperCase()}
-                      </p>
-                    </li>
-                    <WeatherIcon
-                      icon={weatherData.weather[0].icon}
-                      alt={weatherData.weather[0].description}
-                    />
-                  </div>
-                </li>
-                <div className="flex items-center justify-center p-4 py-4 font-medium flex-cola font-poppins top-2">
-                  <li>Feels like: {weatherData.main.feels_like}°C</li>
-                  <li>Min: {weatherData.main.temp_min}°C</li>
-                  <li>Max: {weatherData.main.temp_max}°C</li>
-                  <li>Clouds: {weatherData.clouds.all}%</li>
-                  <li>City: {weatherData.name}</li>                
-                </div>
-              </ul>
+        <div className="flex flex-col items-center justify-center h-screen mx-auto">
+          <h1 className="text-3xl font-bold">
+              The Weather
+          </h1>
+          <h1 className="text-3xl font-bold">
+             {location ? location : '...'}
+          </h1>
+          <div className="p-4 pb-4">
+              <Search onSearch={handleSearch} />
+          </div>
+          <div className="container grid grid-cols-3">
+            <div></div>
+            <div className="text-center md:flex-col sm:flex-col pt-5">
+                {weatherData && (
+                    <WeatherCard weatherData={weatherData} />
+                )}
+                {errorMessage && <p>{errorMessage}</p>}
             </div>
           </div>
-        )}
-        {errorMessage && (
-          <div className="flex flex-col items-center justify-center p-4 mt-4 text-center bg-red-200 rounded-lg shadow-lg shadow-sky-700">
-            <p className="text-xl font-bold text-red-700">{errorMessage}</p>
-          </div>
-        )}
-      </div>
-    </div>
+        </div>
   );
 };
 
