@@ -16,7 +16,10 @@ interface ForecastProps {
             icon: string;
         }[];
         name: string;
-        rain: {
+        rain?: {
+            '3h': number;
+        }
+        snow?: {
             '3h': number;
         }
 };
@@ -45,16 +48,19 @@ const ForecastCard: React.FC<ForecastProps> = (props, key) => {
                 <div className="text-xl font-medium font-poppins tracking-widest"> 
                             {Math.round(props.main.temp)}°C
                         </div>
-                <div className="grid grid-cols-2 gap-4 text-center md:flex-col sm:flex-col p-4">
+                <div className="grid grid-cols-1 gap-4 text-center md:flex-col sm:flex-col p-4">
                     <div className='grid grid-row-2 gap-4 items-center justify-center'>
                         <div className="text-l font-medium font-poppins tracking-widest"> 
                             Feels {Math.round(props.main.feels_like)}°C
                         </div>
                     </div>
-                    <div>
+                    <div className='grid grid-col-2 gap-4 items-center justify-center'>
                         <div className="text-l font-medium font-poppins tracking-widest">
-                            {props.rain ? `Rain: ${props.rain['3h']}mm}` : `Rain: 0mm`}
+                            {props.rain ? `Rain: ${props.rain['3h']}mm}` : ``}
                         </div>
+                        <div className="text-l font-medium font-poppins tracking-widest">
+                            {props.snow ? `Snow: ${props.snow['3h']}mm` : ``}
+                         </div>
                     </div>
                 </div>
             </div>

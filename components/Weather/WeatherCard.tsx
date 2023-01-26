@@ -31,12 +31,9 @@ interface WeatherCardProps {
             type: number;
             id: number;
             country: string;
-            sunrise: number;
-            sunset: number;
         };
         name: string;
         cod: number;
-        dt_txt: string;
         };
         
 }
@@ -44,16 +41,13 @@ interface WeatherCardProps {
 
 
 const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData }) => {
-
-    const date = weatherData.dt ? moment(weatherData.dt).format('dddd MM/DD') : moment(weatherData.dt_txt).format('dddd MM/DD');
-
     return (
         <div className="flex text-center p-4 mt-4">
                 <div className="items-center justify-center flex-col">
                     <ul>
                         <li className="flex flex-col items-center justify-center font-poppins tracking-widest">
                             <p className="text-2xl font-bold">
-                                {date}
+                                {moment(weatherData.dt).format('dddd MM/DD') }
                             </p>
                         </li>
                         <li>

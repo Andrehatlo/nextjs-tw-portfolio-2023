@@ -9,6 +9,14 @@ export interface ForecastData {
     list: Forecast[];
 }
 
+interface Rain {
+    '3h': number;
+}
+
+interface Snow {
+    '3h': number;
+}
+
 export interface Forecast {
     dt_txt: string;
     main: {
@@ -21,9 +29,8 @@ export interface Forecast {
         icon: string;
     }[];
     name: string;
-    rain: {
-        '3h': number;
-    }
+    rain?: Rain;
+    snow?: Snow;
 }
 
 const Forecast: React.FC = () => {
@@ -44,7 +51,7 @@ const Forecast: React.FC = () => {
             const { data } = await axios.get<ForecastData>(url);
 
             // Group forecast by date
-            const forecastByDate = data.list.reduce((acc, forecast) => {
+            const forecastByDate = data.list.reduce((acc: any, forecast) => {
                 const date = moment(forecast.dt_txt).format("YYYY-MM-DD");
                 acc[date] = acc[date] || [];
                 acc[date].push(forecast);
@@ -52,9 +59,9 @@ const Forecast: React.FC = () => {
             }, {});
             
             // Average temperature and feels_like for each date
-            const fiveDayForecast = Object.values(forecastByDate).map(forecasts => {
-                const temp = forecasts.reduce((acc, forecast) => acc + forecast.main.temp, 0) / forecasts.length;
-                const feels_like = forecasts.reduce((acc, forecast) => acc + forecast.main.feels_like, 0) / forecasts.length;
+            const fiveDayForecast = Object.values(forecastByDate).map((forecasts: any) => {
+                const temp = (forecasts).reduce((acc: any, forecast: any) => acc + forecast.main.temp, 0) / forecasts.length;
+                const feels_like = (forecasts).reduce((acc: any, forecast: any) => acc + forecast.main.feels_like, 0) / forecasts.length;
                 return {
                     dt_txt: moment(forecasts[0].dt_txt).format("YYYY-MM-DD"),
                     main: {
@@ -62,9 +69,15 @@ const Forecast: React.FC = () => {
                         feels_like
                     },
                     weather: forecasts[0].weather,
+                    rain: forecasts[0].rain,
+                    snow: forecasts[0].snow
                 };
             });
-            setForecastData({ list: fiveDayForecast });
+            const newForecastData = fiveDayForecast.map(({dt_txt, main, weather, rain, snow}) => {
+                return { 
+                    dt_txt, main, weather, name: 'unknown', rain, snow }
+              });
+            setForecastData({ list: newForecastData });
         } catch (error) {
             setErrorMessage("Spelled location wrong?");
             console.log(error);

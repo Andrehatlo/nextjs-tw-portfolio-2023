@@ -100,7 +100,7 @@ const Weather: React.FC = () => {
         <Search onSearch={handleSearch} />
         {weatherData && (          
           <div className="flex p-4 mt-4 text-center text-white rounded-lg shadow-lg bg-fuchsia-400 dark:bg-yellow-400 dark:text-black shadow-sky-700 dark:shadow-cyan-400"> 
-            <WeatherCard weatherData={weatherData} location={location} />
+            <WeatherCard weatherData={weatherData}  />
           </div>
         )}
         {errorMessage && (
