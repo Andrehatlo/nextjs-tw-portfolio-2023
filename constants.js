@@ -54,11 +54,11 @@ export const SKILLS = [
 ];
 
 export const INTRO = {
-  title: `Welcome To My Portfolio`,
+  title: `Welcome`,
   subtitle: `I'm a highly skilled and experienced fullstack developer based in Norway.`,
-  companyLink: 'http://example.com',
-  company: 'ExampleCompany',
-  description: `With 5 years of experience in the IT industry, Whether you need a new website or application developed from scratch, or you require enhancements or updates to an existing one, I have the expertise and dedication to help bring your ideas to life.`,
+  companyLink: 'http://andrehatlo.com',
+  company: ' Freelance',
+  description: `As a fullstack developer with 4 years of experience in the IT industry, whether you need a new website or application developed from scratch, or you require enhancements or updates to an existing one, I have the expertise and dedication to help bring your ideas to life.`,
   outro: `Do not hesitate to connect with me. I am hungry for work and looking forward to work with you by bringing your ideas to life. 🚀`,
   socialimg: "/public/profile.jpeg"
 }
@@ -72,22 +72,21 @@ export const ABOUT = {
       description: `Technically: I'm proficient in a wide range of programming languages displayed further down the page. I am also highly proficient in both back-end and front-end development, ensuring that I can handle all aspects of your project from start to finish.`,  
       description_2: [
         `Socialy: A strong communicator and problem-solver, with the ability to work effectively both independently and in a team.`,
-        `Values: I am a highly motivated and passionate developer, with a strong work ethic and a desire to succeed. I am always looking to learn new skills and improve my knowledge, and I am always open to new opportunities and challenges.`,
-        `I'm a highly skilled and experienced full stack developer based in Norway. Currently searching for clients to work with. With 5 years of experience in the IT industry, Whether you need a new website or application developed from scratch, or you require enhancements or updates to an existing one, I have the expertise and dedication to help bring your ideas to life.`,
+        `Values: I am a highly motivated and a passionate developer, having a strong work ethic and a desire to succeed. I always look to learn new skills to improve my knowledge and open to new opportunities and challenges.`,
+        `Looking for: I'm a highly skilled and experienced full stack developer. Currently searching for clients to work with. With 4 years of experience in the IT industry, Whether you need a new website or application developed from scratch, or you require enhancements or updates to an existing one, I have the expertise and dedication to help bring your ideas to life.`,
       ],
     },
   PRIV: {
-    title: `Me Personally`,
-    subtitle: `I'm a 31 years of age. Currently living in Drammen, Norway. I love to spread good vibes by having a good laugh, having a good time and values my time.`,
-    description: `I was born in Norway but traveled to Saudi Arabia when i was 6 years old. I attended a international private school that resembles something out of Harry Potter movie. Here I attended both computer, technology and chess clubs.
-                  When we got our first computer I was stuck, I've been playing around with it, taught myself to code basic html and css. Thats when i found out i wanted to be a developer.`,
+    title: `Me`,
+    subtitle: `I'm currently living in Drammen, Norway. Where i live with my better half and my dog Mini. I love watching good tv-shows/movies, having fun and finding reasons to smile or laugh.`,
+    description: `I was born in Norway but grew up in Saudi Arabia from a age of 6 years old. I attended a international school that resembles a British Harry Potter school, sorted into color teams competing for merrit badges.
+                  When we got our first family computer i was sold, even to this day. Taught myself to code basic html and css at a age of 14. Thats when i found out i wanted to be a developer. Now im here!`,
     description_2: [
       `I play the guitar and currently learning to play the piano.`,
-      `I built and maintain a family E-Commerce store we I sell Oriental Lamps. OrientDesign.no`,
-      `I have a dog, a 6 years old Boxer/American Bulldog mix and weighs 35kg.`,
+      `I built my own computer at a age of 13, for gaming purposes.`,
+      `I conseptualised, created market fit and designed a fully functional E-Commerce store for my family in 2017`,
     ],
     hobbies: [
-      `🎮 Gaming`,
       `🎧 Music`,
       `📚 Reading`,
       `🏋️‍♂️ Gym`,
@@ -101,11 +100,10 @@ export const ABOUT = {
     ]
   },
 }
-
-    
+  
 export const METADATA = {
-  title: "HATLO",
-  description: "I've been working in IT for ~5 years straight, get in touch with me to see what I can do for you.",
+  title: "Dev:Portfolio",
+  description: "I've been working in IT for ~4 years straight, get in touch with me to see what I can do for you.",
   image: "/public/avatar.png",
   type: 'website',
   date: new Date().toDateString(),

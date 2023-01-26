@@ -14,6 +14,7 @@ export const getStaticProps: GetStaticProps = async () => {
               content
           }
       }));
+      // const posts = tempPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
       return {
           props: {
               posts,
@@ -41,7 +42,6 @@ interface BlogProps {
 
 
 const Blog: React.FC<BlogProps> = ({posts}) => {
-  // console.log(posts);
   const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {

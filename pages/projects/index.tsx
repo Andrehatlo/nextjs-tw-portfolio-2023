@@ -25,12 +25,12 @@ const Projects: React.FC<ProjectsProps> = ({}) => {
                     Here are some of my projects
                 </p>
                 <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-                    <Link href="/projects/Forecast" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
+                    <Link href="/projects/forecast" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
                             <h3 className="text-2xl font-bold">
-                                Weather Forcast &rarr;
+                                6 Day Weather Forcast &rarr;
                                 </h3>
                             <p className="mt-4 text-xl">
-                                A 3 day weather forcast app made with React and Tailwind CSS.
+                                OpenweatherApi, React, Tailwind CSS, Next.js
                             </p>
                     </Link>
                     <Link href="/projects/weather" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
@@ -40,7 +40,7 @@ const Projects: React.FC<ProjectsProps> = ({}) => {
                             </p>
                     </Link>
                     <Link href="/" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
-                            <h3 className="text-2xl font-bold">Next.js, Tailwind Portfolio &rarr;</h3>
+                            <h3 className="text-2xl font-bold">Next.js, Tailwind, Framer Motion Portfolio &rarr;</h3>
                             <p className="mt-4 text-xl">
                                 Responsive Portfolio from scratch. Blog, Projects, Stack, Icon and site animation. Btw you're on it right now! 
                             </p>

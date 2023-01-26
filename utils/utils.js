@@ -40,17 +40,14 @@ export const parseContent = async () => {
     try {
         const postFiles = await readFilesInPostFolder();
         const posts = await Promise.all(postFiles.map(async ({fileSlug, filePath}) => {
-            const {data, content} = await parseFileContent(filePath);
+            const { data } = await parseFileContent(filePath);
             return {
                 slug: fileSlug,
                 frontmatter: data,
                 content
             }
         }));
-        // Sorting with newest date blog out first 
-        const sortedPosts = posts.sort((postA, postB) => postA.frontmatter.date > postB.frontmatter.date ? -1 : 1)
-        
-        return sortedPosts;
+        return posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
     } catch (err) {
         throw err;
     }

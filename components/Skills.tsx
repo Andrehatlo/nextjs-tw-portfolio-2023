@@ -2,8 +2,7 @@ import React from 'react';
 import { SKILLS } from '../constants';
 import { IconType }   from 'react-icons/lib';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { HoverIcon }  from '../components/HoverIcon';
+import { HoverIcon }  from './HoverIcon';
 
 interface SkillsProps {}
 
@@ -26,9 +25,8 @@ const Skills: React.FC<SkillsProps> = ({}) => {
 	}
 
     return (
-		<div className="py-6 mt-12 lg:mt-18 sm:pb-36 sm:py-12">
+		<div className="py-6 mt-1 lg:mt-18 sm:pb-36 sm:py-12">
 			<div className="max-w-4xl px-4 mx-auto text-gray-800 dark:text-gray-100">
-			
 				<div className="flex flex-col items-center justify-center flex-1 w-full space-x-4 text-center">
 					{SKILLS.map(({ title, skills }, index) => (
 						<div key={index}>
@@ -37,11 +35,9 @@ const Skills: React.FC<SkillsProps> = ({}) => {
 							</h1>
 							<div className="flex flex-wrap gap-6 transform-gpu seq">
 								{skills.map(({name, icon, url}, index) => (
-									<Link href={url} className="href" key={index}>
-										<div key={index}>
-											{renderIcon(name, icon, index)}
-										</div>
-									</Link>
+									<div key={index}>
+										{renderIcon(name, icon, index)}
+									</div>
 								))}
 							</div>
 						</div>
