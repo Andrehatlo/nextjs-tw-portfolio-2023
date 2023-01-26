@@ -4,7 +4,7 @@ Jekyll clone using NextJS, Typescript and Tailwind.
 
 Built with Typescript, NextJS/13 and Tailwind.
 
-[Check out the demo](https://nextjs-tw-portfolio-2023.vercel.app/)
+[Check out the demo](https://andrehatlo.com/)
 
 ## Features:
 Fully responsive portfolio site that includes:
