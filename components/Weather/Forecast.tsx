@@ -4,6 +4,7 @@ import moment from 'moment';
 import Search from './Search';
 import WeatherIcon from './WeatherIcon';
 import ForecastCard from './ForecastCard';
+import HorizontalForecastScroll from './HorizontalForecastScroll';
 
 export interface ForecastData {
     list: Forecast[];
@@ -85,7 +86,7 @@ const Forecast: React.FC = () => {
     };
 
     return (
-        <div>
+        <>
             <div className="flex flex-col items-center justify-center h-screen">
                 <h1 className="text-3xl font-bold">
                     6 Day Forecast
@@ -93,16 +94,20 @@ const Forecast: React.FC = () => {
                 <div className="p-4 pb-4">
                     <Search onSearch={handleSearch} />
                 </div>
-                <div className="container mx-auto">
-                    <div className="grid grid-cols-6 gap-4 mt-4 text-center md:flex-col sm:flex-col">
-                        {forecastData?.list.map((forecast, i) => (
+            </div>
+            <div className='overflow-y-scroll h-screen flex self-center justify-center'>
+                <div className='w-64 h-64 gap-4 mt-4 text-center'>
+                    {forecastData?.list.map((forecast, i) => (
+                        <div key={i}>
                             <ForecastCard key={i} {...forecast} />
-                        ))}
-                        {errorMessage && <p>{errorMessage}</p>}
-                    </div>
+                            <HorizontalForecastScroll key={i} {...forecast} />
+                            
+                        </div>
+                    ))}
+                    {errorMessage && <p>{errorMessage}</p>}
                 </div>
             </div>
-        </div>
+        </>
                 
     );
 };

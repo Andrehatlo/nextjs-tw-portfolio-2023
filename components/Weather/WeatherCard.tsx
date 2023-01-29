@@ -50,7 +50,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData }) => {
              <div className="pt-5 p-4 text-center font-bold text-gray-600 border-opacity-40 border border-white-600 shadow-lg drop-shadow-lg">
                  <div className="grid grid-row-2 gap-4 text-center md:flex-col sm:flex-col ">
                      <div className="text-sm font-medium  font-poppins tracking-widest">
-                         {moment(weatherData.dt).format('MM/DD')}
+                         {moment(weatherData.dt).format('DD/MM')}
                      </div>
                      <div className="text-md div text-bold  font-poppins tracking-widest">
                          {moment(weatherData.dt).format('dddd')}

@@ -30,9 +30,9 @@ const ForecastCard: React.FC<ForecastProps> = (props, key) => {
     return (
        <>
             <div key={key} className="p-4 text-center font-bold text-gray-600 border-opacity-40 border border-white-600 shadow-lg drop-shadow-lg">
-                <div className="grid grid-row-2 gap-4 text-center md:flex-col sm:flex-col ">
+                <div className="grid grid-row-2 gap-4 text-center md:grid-col sm:grid-col flex-shrink ">
                     <div className="text-sm font-medium  font-poppins tracking-widest">
-                        {moment(props.dt_txt).format('MM/DD')}
+                        {moment(props.dt_txt).format('DD/MM')}
                     </div>
                     <div className="text-md div text-bold  font-poppins tracking-widest">
                         {moment(props.dt_txt).format('dddd')}
