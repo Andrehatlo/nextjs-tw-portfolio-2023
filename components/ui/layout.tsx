@@ -18,9 +18,7 @@ const Layout: React.FC<LayoutProps> = ({children}) => {
                 </Link>
             </div>
             <div className='container justify-center w-5/6 mx-auto mt-16 md:w-3/5'> 
-                {/* <div className='grid gap-2 mt-12 sm:grid-cols-2 lg:grid-cols-3'> */}
-                    {children}
-                {/* </div> */}
+                {children}
             </div>
         </div>
     );

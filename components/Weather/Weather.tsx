@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Search from './Search';
-import WeatherIcon from './WeatherIcon';
 import WeatherCard from './WeatherCard';
 
-// openweathermap.org api weather data 
-
+// Openweathermap.org api weather data 
 interface WeatherData {
   coord: {
     lon: number;
