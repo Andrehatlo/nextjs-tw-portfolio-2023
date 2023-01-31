@@ -1,5 +1,4 @@
 // Weather Card
-
 import React from 'react';
 import WeatherIcon from './WeatherIcon';
 import moment from 'moment';

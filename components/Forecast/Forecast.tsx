@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import Search from './Search';
-import WeatherIcon from './WeatherIcon';
+import Search from '../Weather/Search';
 import ForecastCard from './ForecastCard';
-import HorizontalForecastScroll from './HorizontalForecastScroll';
 
 export interface ForecastData {
     list: Forecast[];
@@ -86,28 +84,37 @@ const Forecast: React.FC = () => {
     };
 
     return (
-        <>
-            <div className="flex flex-col items-center justify-center h-screen">
+        <div className="items-center self-center justify-center">
+            <div className='flex flex-col items-center self-center justify-center h-screen'>
                 <h1 className="text-3xl font-bold">
-                    6 Day Forecast
-                </h1>
-                <div className="p-4 pb-4">
-                    <Search onSearch={handleSearch} />
-                </div>
-            </div>
-            <div className='overflow-y-scroll h-screen flex self-center justify-center'>
-                <div className='w-64 h-64 gap-4 mt-4 text-center'>
+                        6 Day Forecast
+                    </h1>
+                    <div className="p-1 pb-1">
+                        <Search onSearch={handleSearch} />
+                    </div>
+                <div className='flex overflow-x-scroll w-full h-100 gap-4 mt-4 justify-center p-4'>
                     {forecastData?.list.map((forecast, i) => (
                         <div key={i}>
                             <ForecastCard key={i} {...forecast} />
-                            <HorizontalForecastScroll key={i} {...forecast} />
-                            
                         </div>
                     ))}
                     {errorMessage && <p>{errorMessage}</p>}
                 </div>
             </div>
-        </>
+        </div>
+
+
+            // {/* <div className='overflow-y-scroll h-screen flex self-center justify-center'>
+            //     <div className='w-64 h-64 gap-4 mt-4 text-center'>
+            //         {forecastData?.list.map((forecast, i) => (
+            //             <div key={i}>
+            //                 <ForecastCard key={i} {...forecast} />
+            //             </div>
+            //         ))}
+            //         {errorMessage && <p>{errorMessage}</p>}
+            //     </div>
+            // </div> */}
+
                 
     );
 };

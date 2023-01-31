@@ -1,8 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import {useRouter} from "next/router";
-import Navbar from "./ui/NavBar";
-import Footer from "./ui/Footer";
+import Navbar from "./Ui/NavBar";
+import Footer from "./Ui/Footer";
 import { METADATA } from '../constants';
 import { motion } from "framer-motion";
 
