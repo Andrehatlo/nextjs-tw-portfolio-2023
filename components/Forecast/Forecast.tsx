@@ -92,13 +92,15 @@ const Forecast: React.FC = () => {
                     <div className="p-1 pb-1">
                         <Search onSearch={handleSearch} />
                     </div>
-                <div className='flex overflow-x-scroll w-full h-100 gap-4 mt-4 justify-center p-4'>
-                    {forecastData?.list.map((forecast, i) => (
-                        <div key={i}>
-                            <ForecastCard key={i} {...forecast} />
-                        </div>
-                    ))}
-                    {errorMessage && <p>{errorMessage}</p>}
+                <div className='flex overflow-x-scroll w-full h-100 gap-0 mt-4 justify-center p-4'>
+
+                        {forecastData?.list.map((forecast, i) => (
+                            <div key={i}>
+                                <ForecastCard key={i} {...forecast} />
+                            </div>
+                        ))}
+                        {errorMessage && <p>{errorMessage}</p>}
+
                 </div>
             </div>
         </div>
