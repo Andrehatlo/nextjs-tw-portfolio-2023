@@ -92,7 +92,8 @@ const Forecast: React.FC = () => {
                     <div className="p-1 pb-1">
                         <Search onSearch={handleSearch} />
                     </div>
-                <div className='flex overflow-x-scroll w-full h-100 gap-0 mt-4 justify-center p-4'>
+                <div className="sm:flex sm:overflow-y-scroll">
+                    <div className='lg:md:flex lg:md:w-full h-100 gap-2 mt-4 justify-center p-4'>
 
                         {forecastData?.list.map((forecast, i) => (
                             <div key={i}>
@@ -100,24 +101,10 @@ const Forecast: React.FC = () => {
                             </div>
                         ))}
                         {errorMessage && <p>{errorMessage}</p>}
-
+                    </div>
                 </div>
             </div>
-        </div>
-
-
-            // {/* <div className='overflow-y-scroll h-screen flex self-center justify-center'>
-            //     <div className='w-64 h-64 gap-4 mt-4 text-center'>
-            //         {forecastData?.list.map((forecast, i) => (
-            //             <div key={i}>
-            //                 <ForecastCard key={i} {...forecast} />
-            //             </div>
-            //         ))}
-            //         {errorMessage && <p>{errorMessage}</p>}
-            //     </div>
-            // </div> */}
-
-                
+        </div>                
     );
 };
 
