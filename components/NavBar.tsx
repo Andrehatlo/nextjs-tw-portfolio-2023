@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { MENULINKS } from '../../constants'
+import { MENULINKS } from '../constants'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX, faBars } from '@fortawesome/free-solid-svg-icons'
-import ThemeSwitch from '../ThemeSwitch';
-import { Icon } from '../Icon';
-import { IconType } from 'react-icons/lib';
+import ThemeSwitch from './ThemeSwitch';
 
 
 interface NavbarProps {}

@@ -1,8 +1,8 @@
 import React from "react";
 import Link from 'next/link';
-import { SOCIAL_LINKS } from "../../constants";
+import { SOCIAL_LINKS } from "../constants";
 import { IconType } from "react-icons";
-import { Icon } from '../Icon'
+import { Icon } from './Icon'
 import {motion} from 'framer-motion';
 
 interface FooterProps { 
