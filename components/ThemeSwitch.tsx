@@ -14,7 +14,6 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = () => {
 
     return (
         <div>
-            {/* TODO: THEME CSS DARK TEXT & MENU CHANGE IN DARK THEME  */}
               {/* Dark/Light Theme Toggle */}
               <button
                 aria-label="Toggle Dark Mode"

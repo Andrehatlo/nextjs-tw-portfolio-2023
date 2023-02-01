@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Search from './Search';
-import WeatherIcon from './WeatherIcon';
 import WeatherCard from './WeatherCard';
 
-// openweathermap.org api weather data 
-
+// Openweathermap.org api weather data 
 interface WeatherData {
   coord: {
     lon: number;
@@ -92,7 +90,7 @@ const Weather: React.FC = () => {
           </div>
           <div className="container grid grid-cols-3">
             <div></div>
-            <div className="text-center md:flex-col sm:flex-col pt-5">
+            <div className="text-center md:flex-col sm:flex-col">
                 {weatherData && (
                     <WeatherCard weatherData={weatherData} />
                 )}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Forecast from '../../components/Weather/Forecast';
+import Forecast from '../../components/Forecast/Forecast';
 
 const ForecastPage = () => {
     return (

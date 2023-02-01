@@ -1,8 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import {useRouter} from "next/router";
-import Navbar from "./ui/NavBar";
-import Footer from "./ui/Footer";
+import Navbar from "./NavBar";
+import Footer from "./Footer";
 import { METADATA } from '../constants';
 import { motion } from "framer-motion";
 
@@ -48,9 +48,9 @@ const MetaContainer: React.FC<MetaContainerProps> = ({children}) => {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: 300, opacity: 0 }}
                     transition={{
-                    type: "spring",
-                    stiffness: 260,
-                    damping: 20,
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
                     }}
                 >
                     <Navbar/>

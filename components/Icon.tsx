@@ -11,7 +11,7 @@ export const Icon: React.FC<IconProps> = ({ icon: Icon, children}) => {
     return (
         <div className="flex-shrink-0" role="button">
             { 
-                <div className="flex-shrink-0"> 
+                <div> 
                     <Icon  /> 
                 </div>
             }
