@@ -3,7 +3,7 @@ import Forecast from '../../components/Forecast/Forecast';
 
 const ForecastPage = () => {
     return (
-        <div>
+        <div className="sm:overflow-y-auto">
             <Forecast />
         </div>
     );
