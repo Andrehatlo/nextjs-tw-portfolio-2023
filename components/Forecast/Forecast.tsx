@@ -3,6 +3,7 @@ import axios from 'axios';
 import moment from 'moment';
 import Search from '../Weather/Search';
 import ForecastCard from './ForecastCard';
+import styled from 'styled-components';
 
 export interface ForecastData {
     list: Forecast[];
@@ -31,6 +32,12 @@ export interface Forecast {
     rain?: Rain;
     snow?: Snow;
 }
+
+const StyledFlex = styled.div`
+    @apply sm:flex;
+    overflow-y: auto;
+    max-height: 100vh;
+`;
 
 const Forecast: React.FC = () => {
     const [forecastData, setForecastData] = useState<ForecastData | null>(null);
@@ -94,7 +101,10 @@ const Forecast: React.FC = () => {
                     <div className="p-1 pb-1">
                         <Search onSearch={handleSearch} />
                     </div>
-                <div className="sm:flex sm:overflow-y-scroll">
+                {errorMessage && <p className="text-red-500">
+                    {errorMessage}
+                    </p>}
+                <StyledFlex>
                     <div className='lg:md:flex lg:md:w-full h-100 gap-2 mt-4 justify-center p-4'>
                         {forecastData?.list.map((forecast, i) => (
                             <div key={i}>
@@ -102,7 +112,7 @@ const Forecast: React.FC = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </StyledFlex>
             </div>
         </div>
     );

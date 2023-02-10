@@ -2,3 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  background: #efefef;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.15em;
+  font-size: 18px;
+}

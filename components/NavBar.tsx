@@ -23,7 +23,9 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                     {/* End Logo Here */}
                 </Link> 
               </span>
-            <ThemeSwitch />
+              <div className="flex flex-col pl-4">
+                <ThemeSwitch />
+              </div>
             </div>
             {/* Hamburger icon */}
             <div onClick={() => setOpen(!open)} className="lg:hidden md:hidden">
