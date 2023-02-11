@@ -45,6 +45,12 @@ const Projects: React.FC<ProjectsProps> = ({}) => {
                                 Responsive Portfolio from scratch. Blog, Projects, Animations, Components, API, Styling, Themeswitching. Btw you're on it right now! 
                             </p>
                     </Link>
+                    <Link href="https://awsm-dash.vercel.app/" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
+                        <h3 className="text-2xl font-bold">Crypto Dashboard &rarr;</h3>
+                        <p className="mt-4 text-xl">
+                            A dashboard for crypto currencies. Made with React, Tailwind CSS, Next.js, Framer Motion, CoinGecko API.
+                        </p>
+                    </Link>
 
                 </div>
             </div>
