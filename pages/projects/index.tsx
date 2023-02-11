@@ -22,33 +22,33 @@ const Projects: React.FC<ProjectsProps> = ({}) => {
                     Projects
                 </h1>
                 <p className="mt-3 text-2xl">
-                    Here are some of my projects
+                    Some of my projects
                 </p>
                 <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
                     <Link href="/projects/weekly-forecast" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
-                            <h3 className="text-2xl font-bold">
+                            <h3 className="text-2xl font-bold sm:text-xl">
                                 6 Day Weather Forecast &rarr;
                                 </h3>
-                            <p className="mt-4 text-xl">
+                            <p className="mt-4 text-xl sm:text-l">
                                 OpenweatherApi, React, Tailwind CSS, Next.js
                             </p>
                     </Link>
                     <Link href="/projects/weather" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
                             <h3 className="text-2xl font-bold">Weather Conditions &rarr;</h3>
-                            <p className="mt-4 text-xl">
+                            <p className="mt-4 text-xl sm:text-md">
                                 Simple weather app made with React and Tailwind CSS.
                             </p>
                     </Link>
                     <Link href="/" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
                             <h3 className="text-2xl font-bold">Next.js, Tailwind, Framer Motion Portfolio &rarr;</h3>
-                            <p className="mt-4 text-xl">
+                            <p className="mt-4 text-xl sm:text-md">
                                 Responsive Portfolio from scratch. Blog, Projects, Animations, Components, API, Styling, Themeswitching. Btw you're on it right now! 
                             </p>
                     </Link>
                     <Link href="https://awsm-dash.vercel.app/" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
                         <h3 className="text-2xl font-bold">Crypto Dashboard &rarr;</h3>
-                        <p className="mt-4 text-xl">
-                            Crypto currencies API with chard overview. Made with React, StyledComponents, CoinGecko API and Lodash for the chart.
+                        <p className="mt-4 text-xl sm:text-md">
+                            Crypto currencies API with chart overview. Made in 2019 with React, StyledComponents, CoinGecko API and Lodash for charting functionality.
                         </p>
                     </Link>
 
