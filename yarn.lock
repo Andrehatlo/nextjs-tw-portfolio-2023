@@ -4611,11 +4611,6 @@ elliptic@^6.5.3:
     minimalistic-assert "^1.0.1"
     minimalistic-crypto-utils "^1.0.1"
 
-embla-carousel@^7.0.9:
-  version "7.0.9"
-  resolved "https://registry.npmjs.org/embla-carousel/-/embla-carousel-7.0.9.tgz"
-  integrity sha512-g8pGPd1BxexiZgw8F1aNM1KL3x3eEcz6TGTz20AuqCCynASBV7/h1+aS2rySDc/hHkXqbU8dk7TDhW71LCqVkQ==
-
 emoji-regex@^6.5.1:
   version "6.5.1"
   resolved "https://registry.npmjs.org/emoji-regex/-/emoji-regex-6.5.1.tgz"
