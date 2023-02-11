@@ -3,6 +3,7 @@ import axios from 'axios';
 import moment from 'moment';
 import Search from '../Weather/Search';
 import ForecastCard from './ForecastCard';
+import styled from 'styled-components';
 
 export interface ForecastData {
     list: Forecast[];
@@ -32,6 +33,12 @@ export interface Forecast {
     snow?: Snow;
 }
 
+const StyledFlex = styled.div`
+    @apply sm:flex;
+    overflow-y: auto;
+    max-height: 100vh;
+`;
+
 const Forecast: React.FC = () => {
     const [forecastData, setForecastData] = useState<ForecastData | null>(null);
     const [errorMessage, setErrorMessage] = useState('');
@@ -44,7 +51,6 @@ const Forecast: React.FC = () => {
             setErrorMessage('Location is required');
             return;
         }
-        
         try {
             const url = `https://api.openweathermap.org/data/2.5/forecast?q=${searchTerm}&units=metric&appid=${process.env.WEATHER_API_KEY}`;
             const { data } = await axios.get<ForecastData>(url);
@@ -83,28 +89,32 @@ const Forecast: React.FC = () => {
         }
     };
 
+
+
     return (
         <div className="items-center self-center justify-center">
             <div className='flex flex-col items-center self-center justify-center h-screen'>
                 <h1 className="text-3xl font-bold">
+
                         6 Day Forecast
                     </h1>
                     <div className="p-1 pb-1">
                         <Search onSearch={handleSearch} />
                     </div>
-                <div className="sm:flex sm:overflow-y-scroll">
+                {errorMessage && <p className="text-red-500">
+                    {errorMessage}
+                    </p>}
+                <StyledFlex>
                     <div className='lg:md:flex lg:md:w-full h-100 gap-2 mt-4 justify-center p-4'>
-
                         {forecastData?.list.map((forecast, i) => (
                             <div key={i}>
                                 <ForecastCard key={i} {...forecast} />
                             </div>
                         ))}
-                        {errorMessage && <p>{errorMessage}</p>}
                     </div>
-                </div>
+                </StyledFlex>
             </div>
-        </div>                
+        </div>
     );
 };
 

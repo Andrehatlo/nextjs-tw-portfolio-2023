@@ -102,7 +102,7 @@ export const ABOUT = {
 }
   
 export const METADATA = {
-  title: "Dev:Portfolio",
+  title: "Hatlo:Portfolio",
   description: "I've been working in IT for ~4 years straight, get in touch with me to see what I can do for you.",
   image: "/public/avatar.png",
   type: 'website',
