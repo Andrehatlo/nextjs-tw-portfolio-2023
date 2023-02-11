@@ -48,7 +48,7 @@ const Projects: React.FC<ProjectsProps> = ({}) => {
                     <Link href="https://awsm-dash.vercel.app/" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
                         <h3 className="text-2xl font-bold">Crypto Dashboard &rarr;</h3>
                         <p className="mt-4 text-xl">
-                            A dashboard for crypto currencies. Made with React, Tailwind CSS, Next.js, Framer Motion, CoinGecko API.
+                            Crypto currencies API with chard overview. Made with React, StyledComponents, CoinGecko API and Lodash for the chart.
                         </p>
                     </Link>
 
