@@ -60,12 +60,12 @@ export const INTRO = {
   company: ' Freelance',
   description: `As a fullstack developer with 4 years of experience in the IT industry, whether you need a new website or application developed from scratch, or you require enhancements or updates to an existing one, I have the expertise and dedication to help bring your ideas to life.`,
   outro: `Do not hesitate to connect with me. I am hungry for work and looking forward to work with you by bringing your ideas to life. 🚀`,
-  socialimg: "/public/profile.jpeg"
+  socialimg: "/public/images/me.png"
 }
 
 export const ABOUT = {
   title: `Hi!`,
-  profileimg: "/public/profile.jpeg",
+  profileimg: "/public/images/me.png",
   PROF: {
       title: `Fullstack Developer`,
       subtitle: `A Passionate Full Stack Developer in Norway Oslo. crafting beautiful and functional applications.`,
