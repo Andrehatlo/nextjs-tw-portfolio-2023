@@ -17,6 +17,13 @@ interface BlogCardProps {
 }
 
 const Card: React.FC<BlogCardProps> = ({post}) => {
+    const formatDate = (dateString: string) => {
+        const date = new Date(dateString);
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    }
     return (
         <div className="container flex flex-wrap w-full p-6 mx-auto transition duration-500 transform hover:scale-110"> 
             <article className="max-w-md mt-4 duration-300 rounded-md shadow-lg dark:shadow-slate-50 dark:shadow-lg hover:shadow-sm hover:shadow-indigo-500/40">
@@ -29,7 +36,7 @@ const Card: React.FC<BlogCardProps> = ({post}) => {
                     />
                     <div className="flex pt-3 mt-2 ml-4 mr-2">
                         <span className="block text-sm dark:text-gray-100 light:text-gray-400">
-                            {post.frontmatter.date}</span> 
+                            {formatDate(post.frontmatter.date)}</span> 
                     </div>
                     <div className="pt-3 mb-3 ml-4 mr-2">
                         <h3 className="text-xl light:text-gray-900 dark:text-white" >

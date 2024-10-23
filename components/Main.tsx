@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from 'next/link'
 import { INTRO, SOCIAL_LINKS } from '../constants';
-import socialImg from '/public/profile.jpeg';
+import socialImg from '/public/images/me.png';
 import { Icon } from "./Icon";
 
 interface MainProps {}

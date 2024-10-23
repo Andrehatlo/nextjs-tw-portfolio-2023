@@ -3,6 +3,21 @@ import { GetStaticProps } from 'next'
 import { readFilesInPostFolder, parseFileContent } from '../../utils/utils'
 import Card from '../../components/Card';
 
+interface Frontmatter {
+  title: string;
+  date: string;
+  metaTitle: string;
+  metaDesc: string;
+  tags: string[];
+  socialImage: string;
+}
+
+interface Post {
+  slug: string;
+  content: string;
+  frontmatter: Frontmatter;
+}
+
 export const getStaticProps: GetStaticProps = async () => {
   try {
       const postFiles = await readFilesInPostFolder();
@@ -10,11 +25,13 @@ export const getStaticProps: GetStaticProps = async () => {
           const {data, content} = await parseFileContent(filePath);
           return {
               slug: fileSlug,
-              frontmatter: data,
+              frontmatter: data as Frontmatter,
               content
           }
       }));
-      // const posts = tempPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+            // Sort posts by date in descending order
+      posts.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+      
       return {
           props: {
               posts,
@@ -26,20 +43,8 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 interface BlogProps {
-  posts: {
-    slug: string;
-    content: string;
-    frontmatter: {
-      title: string;
-      date: string;
-      metaTitle: string;
-      metaDesc: string;
-      tags: string[];
-      socialImage: string;
-    };
-  }[];
+  posts: Post[];
 }
-
 
 const Blog: React.FC<BlogProps> = ({posts}) => {
   const [isLoading, setIsLoading] = useState(true);
